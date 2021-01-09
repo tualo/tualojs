@@ -10,7 +10,7 @@ class TualoJSMiddleware implements IMiddleware{
             try{
                 // TualoApplication::stylesheet("./theme-material/resources/theme-material-all.css" ,12);
                 // TualoApplication::stylesheet("./theme/loader/style.css" ,12);
-                // TualoApplication::javascript(  'tualojs_ajax', './tualojs/Ajax.js', [], 1 );
+                APP::javascript(  'tualojs_stringarray', './tualojs/data/field/Array.js', [], 1 );
             }catch(Exception $e){
                 APP::set('maintanceMode','on');
                 APP::addError($e->getMessage());
