@@ -1,8 +1,8 @@
 <?php
-namespace tualo\Office\TualoJS\Routes;
-use tualo\Office\Basic\TualoApplication as APP;
-use tualo\Office\Basic\Route as BasicRoute;
-use tualo\Office\Basic\IRoute;
+namespace Tualo\Office\TualoJS\Routes;
+use Tualo\Office\Basic\TualoApplication as APP;
+use Tualo\Office\Basic\Route as BasicRoute;
+use Tualo\Office\Basic\IRoute;
 
 
 class TualoJSRoute implements IRoute{
