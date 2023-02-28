@@ -1,5 +1,5 @@
 Ext.namespace('Tualo');
-Ext.define('TualoOffice.tualojs.Ajax', {
+Ext.define('Tualo.tualojs.Ajax', {
 
     alias: 'Tualo.Ajax',
     singleton: true,
