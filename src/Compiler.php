@@ -8,7 +8,7 @@ class Compiler implements ICompiler {
     
 
     public static function getFiles(){
-        return CompilerHelper::getFiles('tualojs',10000);
+        return CompilerHelper::getFiles(__DIR__,'tualojs',10000);
 
     }
 }
