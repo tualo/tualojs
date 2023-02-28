@@ -129,4 +129,4 @@ Ext.define('Tualo.tualojs.Ajax', {
     }
   });
   
-  Tualo.Ajax = TualoOffice.tualojs.Ajax;
+  Tualo.Ajax = Tualo.tualojs.Ajax;
