@@ -1,12 +1,13 @@
 Ext.define('Tualo.Fetch',{
     singleton: true,
+    getFormData(object) {
+        const formData = new FormData();
+        Object.keys(object).forEach(key => formData.append(key, object[key]));
+        return formData;
+    },
     post: async (data)=>{
 
-        let frmData = object => Object.keys(data).reduce((formData, key) => {
-            formData.append(key, object[key]);
-            return formData;
-        }, new FormData());
-
+        let frmData = this.getFormData(data);
         let result = await fetch(
         Ext.getApplication().getAPIPath(),
         {
