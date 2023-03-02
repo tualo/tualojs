@@ -3,6 +3,9 @@ Ext.define('Tualo.tualojs.Ajax', {
 
     alias: 'Tualo.Ajax',
     singleton: true,
+    json: async function(url,params){
+      return await fetch(url).then((response) => response.json());
+    },
     request: function(options){
       var success = function(){};
       var failure = function(){};
@@ -45,7 +48,7 @@ Ext.define('Tualo.tualojs.Ajax', {
             obj = Ext.decode(response.responseText);
           }catch(e){
             console.error(e,options);
-            Ext.MessageBox.alert('Fehler','Die Serverantwort konnte nicht verarbeitet werden');
+            throw new Error('Die Serverantwort konnte nicht verarbeitet werden');
           }
           json.apply(this,[obj,response.responseText]);
         }
