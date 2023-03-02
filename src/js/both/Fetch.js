@@ -5,7 +5,7 @@ Ext.define('Tualo.Fetch',{
         let formBody = [];
         for (let key in object) {
             let encodedKey = encodeURIComponent(key);
-            let encodedValue = encodeURIComponent(dataToSend[key]);
+            let encodedValue = encodeURIComponent(object[key]);
             formBody.push(encodedKey + '=' + encodedValue);
         }
         formBody = formBody.join('&');
