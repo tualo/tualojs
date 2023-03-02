@@ -1,9 +1,15 @@
 Ext.define('Tualo.Fetch',{
     singleton: true,
     getFormData: function(object) {
-        const formData = new FormData();
-        Object.keys(object).forEach(key => formData.append(key, object[key]));
-        return formData;
+
+        let formBody = [];
+        for (let key in object) {
+            let encodedKey = encodeURIComponent(key);
+            let encodedValue = encodeURIComponent(dataToSend[key]);
+            formBody.push(encodedKey + '=' + encodedValue);
+        }
+        formBody = formBody.join('&');
+        return formBody;
     },
     post: async function(data){
 
@@ -14,7 +20,7 @@ Ext.define('Tualo.Fetch',{
             method: "POST",
             body: frmData,
             headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+                "Content-Type": "application/x-www-form-urlencoded"
             }
         },
         ).then((response) => response.json())
