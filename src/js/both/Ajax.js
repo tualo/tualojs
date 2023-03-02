@@ -3,9 +3,7 @@ Ext.define('Tualo.tualojs.Ajax', {
 
     alias: 'Tualo.Ajax',
     singleton: true,
-    json: async function(url,params){
-      return await fetch(url).then((response) => response.json());
-    },
+    
     request: function(options){
       var success = function(){};
       var failure = function(){};
