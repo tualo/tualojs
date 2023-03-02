@@ -5,7 +5,7 @@ Ext.define('Tualo.Fetch',{
         Object.keys(object).forEach(key => formData.append(key, object[key]));
         return formData;
     },
-    post: async (data)=>{
+    post: async function(data){
 
         let frmData = this.getFormData(data);
         let result = await fetch(
