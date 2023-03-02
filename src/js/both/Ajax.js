@@ -76,14 +76,14 @@ Ext.define('Tualo.tualojs.Ajax', {
             if (obj.file){
               Ext.tualo.window.DownloadManager.notify_download(obj.file);
             }else{
-              Ext.MessageBox.alert('Fehler','Es wurde kein Datei-Attribut zurück gegeben.');
+              throw new Error('Es wurde kein Datei-Attribut zurück gegeben.');
             }
           }else{
-            Ext.MessageBox.alert('Fehler',obj.msg||obj.message);
+            throw new Error(obj.msg||obj.message);
           }
         }catch(e){
           console.error(e);
-          Ext.MessageBox.alert('Fehler','Die Serverantwort konnte nicht verarbeitet werden');
+          throw new Error('Die Serverantwort konnte nicht verarbeitet werden');
         }
         success.apply(this,[response, opts]);
       }
