@@ -9,6 +9,5 @@ class Compiler implements ICompiler {
 
     public static function getFiles(){
         return CompilerHelper::getFiles(__DIR__,'tualojs',10000);
-
     }
 }
