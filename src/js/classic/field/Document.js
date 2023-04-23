@@ -77,8 +77,9 @@ Ext.define('Ext.tualo.form.field.Document', {
     return Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
   },
   loadFile: function(id) {
+    this.mimeEl.innerHTML = "loading...";
     Ext.Ajax.request({
-      url: './dsfile/mime',//?sid=" + sid + '&b=' + this.parent.index + '&cmp=cmp_bezugstamm&TEMPLATE=NO&p=ajax/utils/file/mime',
+      url: './dsfile/mime',
       params: {
         t: this.tablename,
         id: id
@@ -91,21 +92,24 @@ Ext.define('Ext.tualo.form.field.Document', {
             this.mimeEl.className="x-form-text-default";
             var txt = res.mime;
             if (res.original_filename){
-              txt+=" | "+res.original_filename;
+              txt+=" | "+res.original_filename;
             }
             if (!Ext.isEmpty(res.filesize)){
-              txt+=" | "+ this.getReadableFileSizeString(res.filesize);
+              txt+=" | "+ this.getReadableFileSizeString(res.filesize);
             }
             this.mimeEl.innerHTML = txt;
                         
           } else {
+            this.mimeEl.innerHTML = "";
             console.log('Fehler',res.msg);
           }
         } catch (e) {
-          alert("Fehler: " + f.responseText + e);
+          this.mimeEl.innerHTML = "";
+          console.error("Fehler: " + f.responseText + e);
         }
       },
       failure: function(f) {
+        this.mimeEl.innerHTML = "";
       }
     });
   },
