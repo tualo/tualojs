@@ -21,29 +21,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -57,29 +58,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -93,29 +95,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -129,29 +132,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -165,29 +169,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -201,29 +206,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -237,29 +243,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -273,29 +280,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -309,29 +317,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -345,29 +354,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -381,29 +391,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -417,29 +428,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -453,29 +465,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -489,29 +502,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -525,29 +539,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -561,29 +576,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -597,29 +613,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -633,29 +650,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -669,29 +687,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -705,29 +724,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -741,29 +761,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -777,29 +798,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -813,29 +835,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -849,29 +872,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -885,29 +909,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -921,29 +946,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -957,29 +983,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -993,29 +1020,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1029,29 +1057,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1065,29 +1094,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1101,29 +1131,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1137,29 +1168,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1173,29 +1205,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1209,29 +1242,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1245,29 +1279,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1281,29 +1316,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1317,29 +1353,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1353,29 +1390,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1389,29 +1427,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1425,29 +1464,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1461,29 +1501,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1497,29 +1538,30 @@ values
 update
     id =
 values
-(id),
+    (id),
     xtype_long_classic =
 values
-(xtype_long_classic),
+    (xtype_long_classic),
     extendsxtype_classic =
 values
-(extendsxtype_classic),
+    (extendsxtype_classic),
     name =
 values
-(name),
+    (name),
     vendor =
 values
-(vendor);
+    (vendor);
 
-insert ignore into custom_types (
-    vendor,
-    name,
-    id,
-    xtype_long_classic,
-    extendsxtype_classic,
-    xtype_long_modern,
-    extendsxtype_modern
-)
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
 values
     (
         "Tualo",
@@ -1527,6 +1569,117 @@ values
         "#name",
         "widget.xcheckbox",
         "Ext.form.field.Checkbox",
+        "widget.textarea",
+        "Ext.field.Text"
+    ) on duplicate key
+update
+    id =
+values
+    (id),
+    xtype_long_classic =
+values
+    (xtype_long_classic),
+    extendsxtype_classic =
+values
+    (extendsxtype_classic),
+    name =
+values
+    (name),
+    vendor =
+values
+    (vendor);
+
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
+values
+    (
+        "Tualo",
+        "Tualo.DataSets.combobox.farben.Rgb",
+        "Tualo.DataSets.combobox.farben.Rgb",
+        "widget.combobox_farben_rgb",
+        "Tualo.cmp.cmp_ds.field.ComboBoxDS",
+        "widget.textarea",
+        "Ext.field.Text"
+    ) on duplicate key
+update
+    id =
+values
+    (id),
+    xtype_long_classic =
+values
+    (xtype_long_classic),
+    extendsxtype_classic =
+values
+    (extendsxtype_classic),
+    name =
+values
+    (name),
+    vendor =
+values
+    (vendor);
+
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
+values
+    (
+        "Tualo",
+        "Ext.tualo.form.field.DSFields",
+        "Ext.tualo.form.field.DSFields",
+        "widget.tualodsfields",
+        "Ext.form.field.ComboBox",
+        "widget.textarea",
+        "Ext.field.Text"
+    ) on duplicate key
+update
+    id =
+values
+    (id),
+    xtype_long_classic =
+values
+    (xtype_long_classic),
+    extendsxtype_classic =
+values
+    (extendsxtype_classic),
+    name =
+values
+    (name),
+    vendor =
+values
+    (vendor);
+
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
+values
+    (
+        "Tualo",
+        "Ext.tualo.form.field.ListSelection",
+        "Ext.tualo.form.field.ListSelection",
+        "widget.tualolistselection",
+        "Ext.form.field.ComboBox",
         "widget.textarea",
         "Ext.field.Text"
     ) on duplicate key
