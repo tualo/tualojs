@@ -75,7 +75,8 @@ Ext.define('Tualo.tualojs.Ajax', {
           var obj = Ext.decode(response.responseText);
           if (obj.success===true){
             if (obj.file){
-              Ext.tualo.window.DownloadManager.notify_download(obj.file);
+              //Ext.tualo.window.DownloadManager.notify_download(obj.file);
+              window.open('./tualo/download/'+obj.file,'_blank');
             }else{
               throw new Error('Es wurde kein Datei-Attribut zurück gegeben.');
             }
