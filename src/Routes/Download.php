@@ -18,6 +18,18 @@ class Download implements IRoute{
                     header("HTTP/1.0 404 Not Found");
                     exit();
                 }else{
+
+                    $size = filesize(TualoApplication::get('tempPath').'/'.$matches['file']);
+
+                    header('Content-Description: File Transfer');
+                    header('Content-Type: '.mime_content_type(TualoApplication::get('tempPath').'/'.$matches['file']));
+                    header('Content-Disposition: attachment; filename="'.$matches['file'].'"');
+                    header('Content-Transfer-Encoding: binary');
+                    header('Expires: 0');
+                    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                    header('Pragma: public');
+                    header('Content-Length: ' . $size);
+
                     readfile(TualoApplication::get('tempPath').'/'.$matches['file']);
                     exit();
                 }
