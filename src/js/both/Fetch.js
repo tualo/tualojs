@@ -11,11 +11,11 @@ Ext.define('Tualo.Fetch',{
         formBody = formBody.join('&');
         return formBody;
     },
-    post: async function(data){
+    post: async function(urlPart,data){
 
         let frmData = this.getFormData(data);
         let result = await fetch(
-        Ext.getApplication().getAPIPath(),
+        Ext.getApplication().getAPIPath()+urlPart,
         {
             method: "POST",
             body: frmData,
