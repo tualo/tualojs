@@ -9,8 +9,8 @@ Ext.define('Ext.tualo.grid.column.Link', {
     renderer: function(val,meta,rec){
         try{
             let link = val,tn=rec.get('__table_name');
-            if (typeof rec.get(tn+'___link')=='string'){
-                link = rec.get(tn+'___link');
+            if (typeof rec.get('_link')=='string'){
+                link = rec.get('_link');
             }
             return '<a href="'+link+'" target="_blank">'+val+'</a>';
         }catch(e){

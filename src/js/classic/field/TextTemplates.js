@@ -37,7 +37,7 @@ Ext.define('Ext.tualo.form.field.TextTemplates',  {
             params: {
                 filter: JSON.stringify([{
                     operator: 'eq',
-                    property: 'texttemplate__klasse',
+                    property: 'klasse',
                     value: this.templateid
                 }])
             },
@@ -48,8 +48,8 @@ Ext.define('Ext.tualo.form.field.TextTemplates',  {
                     o.data.forEach(element => {
 
                         contextMenu.add({
-                            text: element.texttemplate__text.substring(0,30)+'...', 
-                            fulltext: element.texttemplate__text,
+                            text: element.text.substring(0,30)+'...', 
+                            fulltext: element.text,
                             scope: this,
                             handler: this.onItemClick
                         })

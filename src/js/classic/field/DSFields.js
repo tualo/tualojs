@@ -30,7 +30,7 @@ Ext.define('Ext.tualo.form.field.DSFields', {
     fld.up('form').on('recordchanged',function(v){
       if ( (typeof v!='undefined') && (v!=null) && (!Ext.isEmpty(v)) ){
 
-        this.tablename = v.get(v.get('__table_name')+'__table_name');
+        this.tablename = v.get('table_name');
         this.store.load();
       }
     },this);
@@ -54,8 +54,8 @@ Ext.define('Ext.tualo.form.field.DSFields', {
                 try{
                   var r = fld.up('form').getRecord();
                   var v = r.data;
-                  if (!Ext.isEmpty(v[this.tablename+'__table_name'])){
-                    params.tablename = v[this.tablename+'__table_name'];
+                  if (!Ext.isEmpty(v['table_name'])){
+                    params.tablename = v['table_name'];
                   }
                 }catch(e){
   
@@ -64,8 +64,8 @@ Ext.define('Ext.tualo.form.field.DSFields', {
                 try{
                   var r = fld.up('form').getCurrentRecord();
                   var v = r.data;
-                  if (!Ext.isEmpty(v[this.tablename+'__table_name'])){
-                    params.tablename = v[this.tablename+'__table_name'];
+                  if (!Ext.isEmpty(v['table_name'])){
+                    params.tablename = v['table_name'];
                   }
                 }catch(e){
   
@@ -73,8 +73,8 @@ Ext.define('Ext.tualo.form.field.DSFields', {
   
                 try{
                   var v = fld.up('form').getValues();
-                  if (!Ext.isEmpty(v[this.tablename+'__table_name'])){
-                    params.tablename = v[this.tablename+'__table_name'];
+                  if (!Ext.isEmpty(v['table_name'])){
+                    params.tablename = v['table_name'];
                   }
                 }catch(e){
   

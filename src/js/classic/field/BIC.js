@@ -12,7 +12,7 @@ Ext.define('Ext.tualo.form.field.BIC', {
           var store = view.storeInfo.bundesbank_bankleitzahlen;
           var proxy = store.getProxy();
           var params = proxy.getExtraParams( );
-          params.reference = '{"bundesbank_bankleitzahlen__bankleitzahl": "'+blz+'" }';
+          params.reference = '{"bankleitzahl": "'+blz+'" }';
           proxy.setExtraParams(params);
           store.load();
         }
@@ -47,33 +47,4 @@ Ext.define('Ext.tualo.form.field.BIC', {
       }
     }
   }
-  /*
-
-  getValidation: function(){
-    var value = this.getValue();
-    try{
-      if (typeof this.iban_field==='undefined'){
-        return true; // there is nothing to validate
-      }
-      if ( (value===null) || (value==='') && (this.iban_field.getValue()==='') ){
-        //this.setValidation(true);
-        return true; // there is nothing to validate
-      }else{
-        var store = this.getViewModel().storeInfo.bundesbank_bankleitzahlen;
-        var pos = store.findBy( function(item){
-          if (item.get('bic')===value){
-            return true;
-          }
-        });
-        //this.markInvalid('BIC ist falsch');
-        //this.setValidation(pos>-1);
-        return (pos>-1)? true :'BIC ist falsch';//;
-      }
-    }catch(e){
-      console.log(e);
-
-      return false;
-    }
-  }*/
-
 });

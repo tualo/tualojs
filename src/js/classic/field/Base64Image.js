@@ -122,8 +122,8 @@ Ext.define('Ext.tualo.form.field.Base64Image', {
                 if (o.success){
                   if (o.data){
                     if (o.data[0]){
-                      if (o.data[0].report_images__filedata){
-                        this.setRawValue(o.data[0].report_images__filedata);
+                      if (o.data[0].filedata){
+                        this.setRawValue(o.data[0].filedata);
                       }
                     }
                   }

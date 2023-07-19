@@ -1,8 +1,8 @@
 Ext.define('Ext.tualo.form.field.Kontenbezug', {
   extend: 'Ext.form.field.ComboBox',
   alias: ['widget.tualokontenbezug'],
-  valueField: 'steuergruppen__bezeichnung',
-  displayField: 'steuergruppen__bezeichnung',
+  valueField: 'bezeichnung',
+  displayField: 'bezeichnung',
   anchor: '100%',
   queryMode: 'local',
   initComponent: function() {
@@ -14,13 +14,13 @@ Ext.define('Ext.tualo.form.field.Kontenbezug', {
         pageSize: 5000,
         fields: [
           { name: '__id', type: 'string' },
-          { name: 'steuergruppen__bezeichnung', type: 'string' }
+          { name: 'bezeichnung', type: 'string' }
         ],
         listeners: {
           load: function(store,records, successful, operation, eOpt){
             store.add({
               __id: 'steuerschluessel',
-              steuergruppen__bezeichnung: 'steuerschluessel'
+              bezeichnung: 'steuerschluessel'
             })
           }
         },
@@ -30,8 +30,8 @@ Ext.define('Ext.tualo.form.field.Kontenbezug', {
           url: './ds/steuergruppen/read',
           extraParams: {
             query:'',
-            only:'steuergruppen__steuergruppe,steuergruppen__bezeichnung',
-            queryField:'steuergruppen__bezeichnung',
+            only:'steuergruppe,bezeichnung',
+            queryField:'bezeichnung',
             page:1,
             start:0,
             limit:1000

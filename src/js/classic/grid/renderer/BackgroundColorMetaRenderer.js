@@ -3,7 +3,7 @@ Tualo.renderer.BackgroundColorMetaRenderer =function(val,meta,rec){
 
   var key = 'hexcolor';
   if (rec.store.tablename){
-    key=rec.store.tablename+'__hexcolor';
+    key='hexcolor';
   }
   if (typeof rec.get(key)=='string'){
     meta.tdStyle='background-color:'+rec.get(key)+';';
@@ -13,14 +13,17 @@ Tualo.renderer.BackgroundColorMetaRenderer =function(val,meta,rec){
 
 
 Tualo.renderer.CSSMetaRenderer =function(val,meta,rec){
+  try{
+    var key = 'cssstyle';
+    if (rec.store.tablename){
+      key='cssstyle';
+    }
 
-  var key = 'cssstyle';
-  if (rec.store.tablename){
-    key=rec.store.tablename+'__cssstyle';
-  }
-
-  if (typeof rec.get(key)=='string'){
-    meta.tdStyle=rec.get(key)+'';
+    if (typeof rec.get(key)=='string'){
+      meta.tdStyle=rec.get(key)+'';
+    }
+  }catch(e){
+    console.error(e);
   }
   return val;
 };
