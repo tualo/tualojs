@@ -27,6 +27,7 @@ Ext.define('Ext.tualo.form.field.DSFields', {
 
   initComponent: function() {
     var fld = this;
+
     fld.up('form').on('recordchanged',function(v){
       if ( (typeof v!='undefined') && (v!=null) && (!Ext.isEmpty(v)) ){
 
@@ -61,23 +62,27 @@ Ext.define('Ext.tualo.form.field.DSFields', {
   
                 }
 
-                try{
-                  var r = fld.up('form').getCurrentRecord();
-                  var v = r.data;
-                  if (!Ext.isEmpty(v['table_name'])){
-                    params.tablename = v['table_name'];
+                if (typeof params.tablename == 'undefined'){
+                  try{
+                    var r = fld.up('form').getCurrentRecord();
+                    var v = r.data;
+                    if (!Ext.isEmpty(v['table_name'])){
+                      params.tablename = v['table_name'];
+                    }
+                  }catch(e){
+    
                   }
-                }catch(e){
-  
                 }
   
-                try{
-                  var v = fld.up('form').getValues();
-                  if (!Ext.isEmpty(v['table_name'])){
-                    params.tablename = v['table_name'];
+                if (typeof params.tablename == 'undefined'){
+                  try{
+                    var v = fld.up('form').getValues();
+                    if (!Ext.isEmpty(v['table_name'])){
+                      params.tablename = v['table_name'];
+                    }
+                  }catch(e){
+    
                   }
-                }catch(e){
-  
                 }
               }else{
                 //console.warn('Ext.tualo.form.field.DSFields','missing table name');
