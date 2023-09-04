@@ -15,7 +15,7 @@ Ext.define('Ext.tualo.form.field.EmailAddress',  {
     },
     triggers: {
         makeacall: {
-            cls: 'fa-phone',
+            cls: 'fa-at',
             renderTpl: [
                 '<a href="javascript: void(0)" id="{triggerId}" class="{baseCls} {baseCls}-{ui} {cls} {cls}-{ui} {extraCls} ',
                         '{childElCls}" style="width: 32px;<tpl if="triggerStyle">{triggerStyle}</tpl>"',
