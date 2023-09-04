@@ -1,4 +1,4 @@
-Ext.define('Ext.tualo.form.field.Phonetrigger',  {
+Ext.define('Tualo.from.fields.Phonetrigger',  {
     alias: 'widget.phonetrigger',
     extend: 'Ext.form.field.Text',
     constructor: function(config) {
