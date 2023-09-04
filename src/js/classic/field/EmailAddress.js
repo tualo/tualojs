@@ -7,7 +7,6 @@ Ext.define('Ext.tualo.form.field.EmailAddress',  {
     onChange: function(newVal, oldVal) {
         var me = this;
         document.getElementById(me.id+'-trigger-makeacall').setAttribute("href","mailto:"+me.getValue());
-        console.log(me.getValue());
         if (me.getValue()==''){
             document.getElementById(me.id+'-trigger-makeacall').setAttribute("href","javascript: void(0)");
         }
@@ -24,10 +23,7 @@ Ext.define('Ext.tualo.form.field.EmailAddress',  {
                     '{[values.$trigger.renderBody(values)]}',
                 '</a>'
             ],
-            /*
-            bodyTpl: [
-                '<a href="tel:+491734090944"  id="{triggerId}-link"><i class="fa fa-phone"></i></a>'
-            ]*/
+            
             handler: function(me) {
                 
                 
