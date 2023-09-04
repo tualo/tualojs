@@ -6,7 +6,7 @@ Ext.define('Ext.tualo.form.field.EmailAddress',  {
     */
     onChange: function(newVal, oldVal) {
         var me = this;
-        document.getElementById(me.id+'-trigger-makeacall').setAttribute("href","mail:"+me.getValue());
+        document.getElementById(me.id+'-trigger-makeacall').setAttribute("href","mailto:"+me.getValue());
         console.log(me.getValue());
         if (me.getValue()==''){
             document.getElementById(me.id+'-trigger-makeacall').setAttribute("href","javascript: void(0)");

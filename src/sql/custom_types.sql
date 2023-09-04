@@ -1743,5 +1743,6 @@ values
 
 
 insert ignore into custom_types (        vendor,        name,        id, xtype_long_classic, extendsxtype_classic,        xtype_long_modern,        extendsxtype_modern    ) values ( "Tualo",  "Ext.tualo.form.field.PhoneNumber", "Ext.tualo.form.field.PhoneNumber", "widget.tualophonenumber", "Ext.form.field.Text", "widget.textarea", "Ext.field.Text" ) on duplicate key update    id =values(id), xtype_long_classic = values(xtype_long_classic),    extendsxtype_classic = values(extendsxtype_classic),name = values(name),vendor = values(vendor);
+insert ignore into custom_types (        vendor,        name,        id, xtype_long_classic, extendsxtype_classic,        xtype_long_modern,        extendsxtype_modern    ) values ( "Tualo",  "Ext.tualo.form.field.EmailAddress", "Ext.tualo.form.field.EmailAddress", "widget.tualomailaddress", "Ext.form.field.Text", "widget.textarea", "Ext.field.Text" ) on duplicate key update    id =values(id), xtype_long_classic = values(xtype_long_classic),    extendsxtype_classic = values(extendsxtype_classic),name = values(name),vendor = values(vendor);
 
 
