@@ -1,33 +1,17 @@
 Ext.define('Ext.tualo.form.field.Document', {
   extend: 'Ext.form.field.Text',
   alias: 'widget.dsdocumentfield',
-  /*
-  fieldSubTpl:
-  [
-    '<input  id="{id}"  data-ref="inputEl" ',
-    '<tpl if="tabIdx != null"> tabindex="{tabIdx}"</tpl>',
-    '<tpl if="fieldStyle"> style="{fieldStyle}"</tpl>',
-    '<tpl if="ariaEl == \'inputEl\'">',
-    '<tpl foreach="ariaElAttributes"> {$}="{.}"</tpl>',
-    '</tpl>',
-    '<tpl foreach="inputElAriaAttributes"> {$}="{.}"</tpl>',
-    ' class="{fieldCls} {typeCls} {typeCls}-{ui} {editableCls} {inputCls} {fixCls}" autocomplete="off">',
-    'value="{values.value}"/>',
-  ],
-  */
   triggers: {
 
 
     upload: {
         cls: 'x-fa fa-upload my-foo-trigger',
-        //cls: 'my-foo-trigger',
         handler: function() {
             this.upload();
         }
     },
     download: {
         cls: 'x-fa fa-download my-foo-trigger',
-        //cls: 'my-foo-trigger',
         handler: function() {
             this.download();
         }
@@ -115,18 +99,18 @@ Ext.define('Ext.tualo.form.field.Document', {
   },
 
   download: function(btn){
-    alert('download');
-    /*
-    Ext.Ajax.request({
+    
+    Tualo.Ajax.download({
+      showWait: true,
       url: './dsfile/download',
       params: {
         t: this.tablename,
         id: this.value
       },
-      scope: this,
-      success: Ext.window.window.DownloadManager.download
+      timeout: 300000,
+      method: 'POST'
     });
-    */
+
   },
   upload: function(btn) {
     var me = this;
