@@ -5,43 +5,43 @@ Ext.define('Ext.tualo.form.field.Document', {
 
 
     upload: {
-        cls: 'x-fa fa-upload my-foo-trigger',
-        handler: function() {
-            this.upload();
-        }
+      cls: 'x-fa fa-upload my-foo-trigger',
+      handler: function () {
+        this.upload();
+      }
     },
     download: {
-        cls: 'x-fa fa-download my-foo-trigger',
-        handler: function() {
-            this.download();
-        }
+      cls: 'x-fa fa-download my-foo-trigger',
+      handler: function () {
+        this.download();
+      }
     }
   },
   autoSave: false,
-  initComponent: function() {
+  initComponent: function () {
     this.callParent(arguments);
 
   },
 
-  onRender: function(){
+  onRender: function () {
     this.callParent(arguments);
     var el = this.getEl().dom.querySelector('input');
 
-    el.readOnly=true;
-    el.style.opacity=0.1;
-    el.style.width='25px';
+    el.readOnly = true;
+    el.style.opacity = 0.1;
+    el.style.width = '25px';
     el.type = 'hidden';
 
-    
+
     var node = document.createElement("div");                 // Create a <li> node
     this.mimeEl = node;
     var textnode = document.createTextNode("");         // Create a text node
-    node.appendChild(textnode); 
+    node.appendChild(textnode);
     el.parentElement.insertBefore(node, el.nextSibling);
-    
+
   },
 
-  setValue: function(v) {
+  setValue: function (v) {
     this.loadFile(v);
     this.callParent(arguments);
   },
@@ -54,13 +54,13 @@ Ext.define('Ext.tualo.form.field.Document', {
     var i = -1;
     var byteUnits = [' kB', ' MB', ' GB', ' TB', 'PB', 'EB', 'ZB', 'YB'];
     do {
-        fileSizeInBytes = fileSizeInBytes / 1024;
-        i++;
+      fileSizeInBytes = fileSizeInBytes / 1024;
+      i++;
     } while (fileSizeInBytes > 1024);
 
     return Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
   },
-  loadFile: function(id) {
+  loadFile: function (id) {
     this.mimeEl.innerHTML = "loading...";
     Ext.Ajax.request({
       url: './dsfile/mime',
@@ -69,37 +69,37 @@ Ext.define('Ext.tualo.form.field.Document', {
         id: id
       },
       scope: this,
-      success: function(f, o) {
+      success: function (f, o) {
         try {
           var res = Ext.JSON.decode(f.responseText);
           if (res.success) {
-            this.mimeEl.className="x-form-text-default";
+            this.mimeEl.className = "x-form-text-default";
             var txt = res.mime;
-            if (res.original_filename){
-              txt+=" | "+res.original_filename;
+            if (res.original_filename) {
+              txt += " | " + res.original_filename;
             }
-            if (!Ext.isEmpty(res.filesize)){
-              txt+=" | "+ this.getReadableFileSizeString(res.filesize);
+            if (!Ext.isEmpty(res.filesize)) {
+              txt += " | " + this.getReadableFileSizeString(res.filesize);
             }
             this.mimeEl.innerHTML = txt;
-                        
+
           } else {
             this.mimeEl.innerHTML = "";
-            console.log('Fehler',res.msg);
+            console.log('Fehler', res.msg);
           }
         } catch (e) {
           this.mimeEl.innerHTML = "";
           console.error("Fehler: " + f.responseText + e);
         }
       },
-      failure: function(f) {
+      failure: function (f) {
         this.mimeEl.innerHTML = "";
       }
     });
   },
 
-  download: function(btn){
-    
+  download: function (btn) {
+
     Tualo.Ajax.download({
       showWait: true,
       url: './dsfile/download',
@@ -112,7 +112,7 @@ Ext.define('Ext.tualo.form.field.Document', {
     });
 
   },
-  upload: function(btn) {
+  upload: function (btn) {
     var me = this;
     var wnd = Ext.create('Ext.window.Window', {
       modal: true,
@@ -152,91 +152,101 @@ Ext.define('Ext.tualo.form.field.Document', {
           ],
           buttons: [{
             text: 'Abbrechen',
-            handler: function(btn) {
+            handler: function (btn) {
               btn.up().up().up().close();
             }
           }, {
             text: '&Uuml;bernehmen',
             scope: this,
-            handler: function(btn) {
+            handler: function (btn) {
               var wnd = btn.up().up().up();
               var uplform = btn.up('form');
-    
+              var form = me.up('dsform_' + me.tablename);
+
               if (uplform.getForm().isValid()) {
                 var keys = {};
-                if (this.referenceID){
+                if (this.referenceID) {
                   console.log(this.referenceID);
-                }else{
-                  var form = me.up('dsform_'+me.tablename);
-                  var missingValue=false;
+                } else {
+                  
+                  var missingValue = false;
 
-                  var missingValueName='';
-                  if (form){
-    
-                    var values={};
-                    var rec= form.getForm().getRecord();
-                    if (rec){
+                  var missingValueName = '';
+                  if (form) {
+
+                    var values = {};
+                    var rec = form.getForm().getRecord();
+                    if (rec) {
                       values = rec.data;
-                    }else if(form.currentrecord){
+                    } else if (form.currentrecord) {
                       values = form.currentrecord.data;
-                    }else{
+                    } else {
                       values = form.getForm().getValues();
                     }
+                    keys = Ext.apply(keys, values);
+
+                    /*
                     var primaryKeys = me.primaryKeys;
-                    for(var i=0;i<primaryKeys.length;i++){
-                      if (typeof values[primaryKeys[i]]!=='undefined'){
-                        keys[primaryKeys[i]]=values[primaryKeys[i]];
-                      }else{
-                        missingValue=true;
-                        missingValueName=primaryKeys[i];
+                    for (var i = 0; i < primaryKeys.length; i++) {
+                      if (typeof values[primaryKeys[i]] !== 'undefined') {
+                        keys[primaryKeys[i]] = values[primaryKeys[i]];
+                      } else {
+                        missingValue = true;
+                        missingValueName = primaryKeys[i];
                       }
                     }
-                    
+                    */
+
                   }
                 }
 
 
-                if (missingValue==true){
-                  Ext.MessageBox.alert('Fehler','Mindestens ein Pflichtfeld fehlt ('+missingValueName+')');
+                if (missingValue == true) {
+                  Ext.MessageBox.alert('Fehler', 'Mindestens ein Pflichtfeld fehlt (' + missingValueName + ')');
                   return;
                 }
                 var params = {
                   t: me.tablename,
                   fieldName: me.name,
                 };
-                params=Ext.apply(params,keys);
-    
-                if ( !Ext.isEmpty(me.up('form')) && !Ext.isEmpty(me.up('form').currentrecord) &&  me.up('form').currentrecord.phantom){
-                  if(me.autoSave){
-                    me.up('form').getRecord().store.sync({
-                      callback: function(x,o){
+                params = Ext.apply(params, keys);
+
+                if (
+                    !Ext.isEmpty(form) 
+                    && !Ext.isEmpty(form.getForm().getRecord()) 
+                    && form.getForm().getRecord().phantom
+                ) {
+                  if (me.autoSave) {
+                    form.getForm().getRecord().store.sync({
+                      callback: function (x, o) {
                         var values = o.operations.create[0].data;
-                        
+                        /*
                         var primaryKeys = me.primaryKeys;
-                        for(var i=0;i<primaryKeys.length;i++){
-                          if (typeof values[primaryKeys[i]]!=='undefined'){
-                            keys[primaryKeys[i]]=values[primaryKeys[i]];
-                          }else{
-                            missingValue=true;
-                            missingValueName=primaryKeys[i];
+                        for (var i = 0; i < primaryKeys.length; i++) {
+                          if (typeof values[primaryKeys[i]] !== 'undefined') {
+                            keys[primaryKeys[i]] = values[primaryKeys[i]];
+                          } else {
+                            missingValue = true;
+                            missingValueName = primaryKeys[i];
                           }
                         }
+                        */
                         params = {
                           t: me.tablename,
                           fieldName: me.name,
                         };
-                        params=Ext.apply(params,keys);
-            
-                        me.internalUpload(uplform,wnd,params,me);
+                        params = Ext.apply(params, keys);
+
+                        me.internalUpload(uplform, wnd, params, me);
                       }
                     });
                   }
                   return false;
-                }else{
-                  me.internalUpload(uplform,wnd,params,me);
+                } else {
+                  me.internalUpload(uplform, wnd, params, me);
                 }
 
-                
+
               } else {
                 Ext.MessageBox.alert("Fehler", "Die Daten sind nicht korrekt.");
               }
@@ -244,7 +254,7 @@ Ext.define('Ext.tualo.form.field.Document', {
           }]
         }
       ],
-      
+
     });
     wnd.uplform = this.uplform;
     wnd.fieldName = this.name;
@@ -253,13 +263,13 @@ Ext.define('Ext.tualo.form.field.Document', {
 
     wnd.show();
   },
-  internalUpload: function(uplform,wnd,params,me){
-    Ext.MessageBox.wait('Upload','Bitte warten...');
+  internalUpload: function (uplform, wnd, params, me) {
+    Ext.MessageBox.wait('Upload', 'Bitte warten...');
     uplform.getForm().submit({
       scope: wnd,
       url: './dsfile/upload',
       params: params,
-      success: function(f, a) {
+      success: function (f, a) {
         Ext.MessageBox.hide();
         var o = Ext.JSON.decode(a.response.responseText);
         if (o.success) {
@@ -271,22 +281,22 @@ Ext.define('Ext.tualo.form.field.Document', {
         //Ext.MessageBox.hide();
         wnd.close();
       },
-      
-      failure: function(form, action){
-          Ext.MessageBox.hide();
-          switch (action.failureType) {
-            case Ext.form.action.Action.CLIENT_INVALID:
-                Ext.MessageBox.alert(
-                    'Failure',
-                    'Form fields may not be submitted with invalid values'
-                );
-                break;
-            case Ext.form.action.Action.CONNECT_FAILURE:
-                Ext.MessageBox.alert('Failure', 'Ajax communication failed');
-                break;
-            case Ext.form.action.Action.SERVER_INVALID:
-              Ext.MessageBox.alert('Failure', action.result.msg);
-          }
+
+      failure: function (form, action) {
+        Ext.MessageBox.hide();
+        switch (action.failureType) {
+          case Ext.form.action.Action.CLIENT_INVALID:
+            Ext.MessageBox.alert(
+              'Failure',
+              'Form fields may not be submitted with invalid values'
+            );
+            break;
+          case Ext.form.action.Action.CONNECT_FAILURE:
+            Ext.MessageBox.alert('Failure', 'Ajax communication failed');
+            break;
+          case Ext.form.action.Action.SERVER_INVALID:
+            Ext.MessageBox.alert('Failure', action.result.msg);
+        }
       }
     });
   }
