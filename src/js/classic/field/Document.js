@@ -167,7 +167,7 @@ Ext.define('Ext.tualo.form.field.Document', {
                 if (this.referenceID){
                   console.log(this.referenceID);
                 }else{
-                  var form = me.up('formview-'+me.tablename);
+                  var form = me.up('dsform_'+me.tablename);
                   var missingValue=false;
 
                   var missingValueName='';
@@ -208,10 +208,10 @@ Ext.define('Ext.tualo.form.field.Document', {
     
                 if ( !Ext.isEmpty(me.up('form')) && !Ext.isEmpty(me.up('form').currentrecord) &&  me.up('form').currentrecord.phantom){
                   if(me.autoSave){
-                    me.up('form').currentrecord.store.sync({
+                    me.up('form').getRecord().store.sync({
                       callback: function(x,o){
                         var values = o.operations.create[0].data;
-                        console.log();
+                        
                         var primaryKeys = me.primaryKeys;
                         for(var i=0;i<primaryKeys.length;i++){
                           if (typeof values[primaryKeys[i]]!=='undefined'){
