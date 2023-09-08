@@ -271,9 +271,22 @@ Ext.define('Ext.tualo.form.field.Document', {
         //Ext.MessageBox.hide();
         wnd.close();
       },
-      failure: function(){
-        Ext.MessageBox.hide();
-        Ext.MessageBox.alert("Fehler", "Fehler vom Server.");
+      
+      failure: function(form, action){
+          Ext.MessageBox.hide();
+          switch (action.failureType) {
+            case Ext.form.action.Action.CLIENT_INVALID:
+                Ext.MessageBox.alert(
+                    'Failure',
+                    'Form fields may not be submitted with invalid values'
+                );
+                break;
+            case Ext.form.action.Action.CONNECT_FAILURE:
+                Ext.MessageBox.alert('Failure', 'Ajax communication failed');
+                break;
+            case Ext.form.action.Action.SERVER_INVALID:
+              Ext.MessageBox.alert('Failure', action.result.msg);
+          }
       }
     });
   }
