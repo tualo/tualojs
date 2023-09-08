@@ -15,6 +15,7 @@ Tualo.getFNFromString = function(str){
 
 
 
+
 Ext.define('Override.grid.plugin.BufferedRenderer.RefreshSize', {
   override : 'Ext.grid.plugin.BufferedRenderer',
   refreshSize: function() {
