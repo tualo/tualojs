@@ -1752,3 +1752,37 @@ insert ignore into custom_types (        vendor,        name,        id, xtype_l
 
 insert ignore into custom_types (        vendor,        name,        id, xtype_long_classic, extendsxtype_classic,        xtype_long_modern,        extendsxtype_modern    ) values ( "Tualo",  "Ext.tualo.form.field.DatetimeDisplayField", "Ext.tualo.form.field.DatetimeDisplayField", "widget.tualodatetimedisplayfield", "Ext.form.field.Display", "widget.textarea", "Ext.field.Text" ) on duplicate key update    id =values(id), xtype_long_classic = values(xtype_long_classic),    extendsxtype_classic = values(extendsxtype_classic),name = values(name),vendor = values(vendor);
 insert ignore into custom_types (        vendor,        name,        id, xtype_long_classic, extendsxtype_classic,        xtype_long_modern,        extendsxtype_modern    ) values ( "Tualo",  "Ext.tualo.form.field.DocumentAutoSave", "Ext.tualo.form.field.DocumentAutoSave", "widget.dsdocumentfieldautosave", "Ext.tualo.form.field.Document", "widget.textarea", "Ext.field.Text" ) on duplicate key update    id =values(id), xtype_long_classic = values(xtype_long_classic),    extendsxtype_classic = values(extendsxtype_classic),name = values(name),vendor = values(vendor);
+
+
+
+
+insert
+    ignore into extjs_base_types (
+        vendor,
+        id,
+        classname,
+
+        xtype_long_classic,
+        baseclass,
+        xtype_long_modern,
+        name,
+        description,
+        iscolumn,
+        isformfield
+    )
+values
+    (
+        "Tualo",
+        "Tualo.DataSets.DSFilesColumn",
+        "Tualo.DataSets.DSFilesColumn",
+        
+        "widget.tualodsfilescolumn",
+        "Ext.grid.column.Column",
+        "widget.tualodsfilescolumn",
+
+        "Tualo.DataSets.DSFilesColumn",
+        "Tualo Column for DSFiles",
+        1,
+        0
+    )
+;

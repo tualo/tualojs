@@ -10,7 +10,7 @@ Ext.define('Ext.tualo.grid.column.DSFilesColumn', {
         let file_id = val,tn=rec.get('__table_name');
         if (typeof rec.get('__file_id')=='string'){
             file_id = rec.get('__file_id');
-            return '<a href="/dsfiles/'+tn+'/'+file_id+'" target="_blank">'+rec.get('__file_name')+'</a>';
+            return '<a href="./dsfiles/'+tn+'/'+file_id+'" target="_blank">'+rec.get('__file_name')+'</a>';
         }
         return "";
     }
