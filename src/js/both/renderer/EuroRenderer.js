@@ -39,6 +39,12 @@ Ext.define('Tualo.tualojs.Format', {
     },
     deNatualRenderer: function(val,meta,rec){
         return Ext.util.Format.number(val,'0.000/i');
+    },
+    deDateTime: function(val,meta,rec){
+        return Ext.util.Format.date(val,'d.m.Y H:i');
+    },
+    deDate: function(val,meta,rec){
+        return Ext.util.Format.date(val,'d.m.Y');
     }
 });
 
@@ -50,5 +56,7 @@ Ext.merge(Ext.util.Format, {
     'Tualo.renderer.CSSMetaRenderer': Tualo.tualojs.Format.CSSMetaRenderer,
     BackgroundColorMetaRenderer: Tualo.tualojs.Format.backgroundColorMetaRenderer,
     deValueRenderer: Tualo.tualojs.Format.deValueRenderer,
-    deNatualRenderer: Tualo.tualojs.Format.deNatualRenderer
+    deNatualRenderer: Tualo.tualojs.Format.deNatualRenderer,
+    deDate: Tualo.tualojs.Format.deDate,
+    deDateTime: Tualo.tualojs.Format.deDateTime
 });
