@@ -1,4 +1,4 @@
-Ext.define('Ext.tualo.form.field.IMageDisplayField', {
+Ext.define('Ext.tualo.form.field.ImageDisplayField', {
   extend:'Ext.form.field.Display',
   alias: 'widget.imagedisplayfield',
   requires: ['Ext.util.Format', 'Ext.XTemplate'],
