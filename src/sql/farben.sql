@@ -1,3 +1,5 @@
+delimiter ;
+
 CREATE TABLE IF NOT EXISTS `farben` (
     `name` varchar(255) DEFAULT NULL,
     `rgb` varchar(20) NOT NULL DEFAULT '',

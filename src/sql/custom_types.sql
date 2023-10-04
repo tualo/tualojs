@@ -1,3 +1,5 @@
+delimiter ;
+
 insert
     ignore into custom_types (
         vendor,
