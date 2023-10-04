@@ -1801,3 +1801,43 @@ insert ignore into custom_types (        vendor,        name,        id, xtype_l
 
 
 insert ignore into custom_types (        vendor,        name,        id, xtype_long_classic, extendsxtype_classic,        xtype_long_modern,        extendsxtype_modern    ) values ( "Tualo",  "Ext.tualo.form.field.Colors", "Ext.tualo.form.field.Colors", "widget.tualocolors", "Ext.form.field.ComboBox", "widget.textarea", "Ext.field.Text" ) on duplicate key update    id =values(id), xtype_long_classic = values(xtype_long_classic),    extendsxtype_classic = values(extendsxtype_classic),name = values(name),vendor = values(vendor);
+
+
+
+
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
+values
+    (
+        "Tualo",
+        "Ext.tualo.form.field.DateDisplayField",
+        "Ext.tualo.form.field.DateDisplayField",
+        "widget.tualodatedisplayfield",
+        "Ext.form.field.Display",
+        "widget.displayfield",
+        "Ext.form.field.Display"
+    ) on duplicate key
+update
+    id =
+values
+    (id),
+    xtype_long_classic =
+values
+    (xtype_long_classic),
+    extendsxtype_classic =
+values
+    (extendsxtype_classic),
+    name =
+values
+    (name),
+    vendor =
+values
+    (vendor);
