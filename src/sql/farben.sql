@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `farben` (
     PRIMARY KEY (`rgb`)
 );
 
-INSERT INTO
+INSERT IGNORE INTO
     `farben`
 VALUES
     ('black*', 'rgb(0,0,0)'),
