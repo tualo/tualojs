@@ -28,5 +28,19 @@ Ext.define('Ext.tualo.form.field.ImageDisplayField', {
     }catch(e){
       console.log(e);
     }
+  },
+  onDisable: function() {
+    try{
+      this.callParent(arguments);
+    }catch(e){
+      console.log('*',e);
+    }
+  },
+  onEnable: function() {
+    try{
+      this.callParent(arguments);
+    }catch(e){
+      console.log('*',e);
+    }
   }
 });
