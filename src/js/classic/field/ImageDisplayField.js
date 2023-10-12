@@ -14,6 +14,7 @@ Ext.define('Ext.tualo.form.field.ImageDisplayField', {
   ],
 
   setValue: function(v) {
+
     this.loadFile(v);
   },
   getValue: function() {
@@ -22,6 +23,7 @@ Ext.define('Ext.tualo.form.field.ImageDisplayField', {
   height: 45,
   loadFile: function(name) {
     try{
+      console.log('loadFile',name);
       var me = this;
       var el = document.getElementById(me.id+'-bodyEl');
       el.innerHTML = '<img width="100%" style="max-width:300px;" src="'+ name +'"/>';
