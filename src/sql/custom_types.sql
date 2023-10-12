@@ -1818,6 +1818,46 @@ insert
 values
     (
         "Tualo",
+        "Tualo.form.field.ImageDisplay'",
+        "Tualo.form.field.ImageDisplay'",
+        "widget.tualoimagedisplay",
+        "Ext.form.field.Display",
+        "widget.tualoimagedisplay",
+        "Ext.form.field.Display"
+    ) on duplicate key
+update
+    id =
+values
+    (id),
+    xtype_long_classic =
+values
+    (xtype_long_classic),
+    extendsxtype_classic =
+values
+    (extendsxtype_classic),
+    name =
+values
+    (name),
+    vendor =
+values
+    (vendor);
+
+
+
+
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
+values
+    (
+        "Tualo",
         "Ext.tualo.form.field.DateDisplayField",
         "Ext.tualo.form.field.DateDisplayField",
         "widget.tualodatedisplayfield",
