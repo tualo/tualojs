@@ -11,9 +11,10 @@ Ext.define('Tualo.tualojs.Format', {
     CSSMetaRenderer: function(val,meta,rec){
         try{
           var key = 'cssstyle';
+          /*
           if (rec.store.tablename){
             key='cssstyle';
-          }
+          }*/
       
           if (typeof rec.get(key)=='string'){
             meta.tdStyle=rec.get(key)+'';
