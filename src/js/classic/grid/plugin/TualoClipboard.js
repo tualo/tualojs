@@ -26,7 +26,7 @@ Ext.define('Ext.grid.plugin.TualoClipboard', {
     },
  
     getCellData: function (format, erase) {
-
+        console.log('getCellData',this);
         var cmp = this.getCmp(),
             sm = cmp.getSelectionModel(),
             selection = cmp.getSelectionModel().getSelected(),
@@ -41,7 +41,7 @@ Ext.define('Ext.grid.plugin.TualoClipboard', {
 
                 selection.eachCell(function (cellContext) {
                     column = cellContext.column,
-                        view = cellContext.column.getView();
+                    view = cellContext.column.getView(),
                     record = cellContext.record;
     
                     // Do not copy the check column or row numberer column 
@@ -56,10 +56,9 @@ Ext.define('Ext.grid.plugin.TualoClipboard', {
     
                     dataIndex = column.dataIndex;
     
-                    //if (isRaw) {
+                    if (isRaw) {
                         data = record.data[dataIndex];
-                    /*}
-                    else {
+                    } else {
                         // Try to access the view node. 
                         viewNode = view.all.item(cellContext.rowIdx);
     
@@ -73,9 +72,9 @@ Ext.define('Ext.grid.plugin.TualoClipboard', {
                         data = cell.innerHTML;
                         
                         if (isText) {
-                            data = Ext.util.Format.stripTags(data);
+                            data = record.data[dataIndex];// Ext.util.Format.stripTags(data);
                         }
-                    }*/
+                    }
     
                     row.push(data);
     
