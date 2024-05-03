@@ -108,6 +108,7 @@ Ext.define('Ext.grid.plugin.TualoClipboard', {
  
 
         // See decode() comment below 
+        console.log('getCellData',ret);
         return Ext.util.TSV.encode(ret, undefined, null);
     },
  
