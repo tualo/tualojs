@@ -4,6 +4,16 @@ Ext.define('Tualo.tualojs.Format', {
         if (value===null || value===undefined) return '';
         return Ext.util.Format.number(value,'0,000.00 €');
     },
+    deColoredMoneyRenderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
+        if (value===null || value===undefined) return '';
+        if (value>0){
+          return '<span style="color:green;">'+Ext.util.Format.number(value,'0,000.00 €')+'</span>';
+        }
+        if (value<0){
+          return '<span style="color:red;">'+Ext.util.Format.number(value,'0,000.00 €')+'</span>';
+        }
+        return Ext.util.Format.number(value,'0,000.00 €');
+    },
     fullPercentRenderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
         if (value===null || value===undefined) return '';
         return Ext.util.Format.number(value,'0,000 %');
@@ -52,6 +62,7 @@ Ext.define('Tualo.tualojs.Format', {
 Ext.merge(Ext.util.Format, {
     euroRenderer: Tualo.tualojs.Format.euroRenderer,
     deMoneyRenderer: Tualo.tualojs.Format.euroRenderer,
+    deColoredMoneyRenderer: Tualo.tualojs.Format.euroRenderer,
     fullPercentRenderer: Tualo.tualojs.Format.fullPercentRenderer,
     CSSMetaRenderer: Tualo.tualojs.Format.CSSMetaRenderer,
     'Tualo.renderer.CSSMetaRenderer': Tualo.tualojs.Format.CSSMetaRenderer,
