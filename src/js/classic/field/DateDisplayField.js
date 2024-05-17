@@ -1,5 +1,6 @@
 Ext.define('Ext.tualo.form.field.DateDisplayField',  {
-    alias: 'widget.tualodatedisplayfield',
+    alias: ['widget.tualodatedisplayfield','widget.tualodisplaydatefield'],
+    alternateClassName: ['Tualo.form.field.DateDisplayField'],
     extend: 'Ext.form.field.Display',
     
     
