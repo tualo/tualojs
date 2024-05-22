@@ -46,6 +46,7 @@ class InstallMainSQLCommandline implements ICommandline{
         $files = [
             'custom_types' => 'setup custom_types ',
             'farben' => 'setup farben ',
+            'ptypes' => 'setup ptypes ',
             
         ];
 

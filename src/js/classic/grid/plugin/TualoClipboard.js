@@ -1,5 +1,5 @@
 
-Ext.define('Ext.grid.plugin.TualoClipboard', {
+Ext.define('Tualo.grid.plugin.TualoClipboard', {
     extend: 'Ext.plugin.AbstractClipboard',
 
     alias: 'plugin.tualoclipboard',
