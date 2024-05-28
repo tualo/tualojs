@@ -1,3 +1,10 @@
+
+/*
+Ext.define('Tualo.grid.Panel', {
+  extend: 'Ext.grid.Panel',
+  alias: 'widget.tualo_grid',
+});
+
 Ext.define('Ext.tualo.grid.Panel',  {
   //extend: 'Ext.ux.LiveSearchGridPanel',
   extend: 'Ext.grid.Panel',
@@ -152,7 +159,7 @@ Ext.define('Ext.tualo.grid.Panel',  {
           if (this.contextconfig[i].listeners){
             mc.listeners = this.contextconfig[i].listeners;
           }
-          */
+          * /
           cm.push(mc);
 
         }else{
@@ -194,3 +201,4 @@ Ext.define('Ext.tualo.grid.Panel',  {
   }
 
 })
+*/
