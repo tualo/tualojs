@@ -90,9 +90,10 @@ Ext.define('Ext.grid.filters.DefaultFilters', {
 
         if (!Ext.isArray(grid.defaultFilters)){
           if (grid.tablename){
+            /*
             if (Tualo.StoreFilterRegistry.has(grid.tablename)){
               grid.defaultFilters = Tualo.StoreFilterRegistry.get(grid.tablename,true);
-            }
+            }*/
           }
         }
         if (Ext.isArray(grid.defaultFilters)){
