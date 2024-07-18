@@ -19,7 +19,7 @@ Ext.define('Tualo.Ext.form.Panel', {
             '>',
             // If this Panel is framed, the framing template renders the docked items round the frame
             '{% this.renderDockedItems(out,values,0); %}',
-            '<form>'   ,
+            '<form onkeydown="return event.key != \'Enter\';">'   ,
             '<div id="{id}-body" data-ref="body" class="{baseCls}-body<tpl if="bodyCls"> {bodyCls}</tpl>',
                 ' {baseCls}-body-{ui}<tpl if="uiCls">',
                     '<tpl for="uiCls"> {parent.baseCls}-body-{parent.ui}-{.}</tpl>',
