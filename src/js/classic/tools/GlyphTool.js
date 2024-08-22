@@ -9,11 +9,13 @@ Ext.define('Tualo.GlyphTool', {
       glyph: 'save',
       text: '',
       darkColor: false,
-      newLineText: true
+      newLineText: true,
+      record: null
     },
     publishes: {
       darkColor: false,
-      newLineText: true
+      newLineText: true,
+      record: null
     },
     viewModel: {
       type: 'default',
@@ -23,7 +25,8 @@ Ext.define('Tualo.GlyphTool', {
         glyph: 'save',
         text: '',
         darkColor: false,
-        newLineText: true
+        newLineText: true,
+        record: null
       },
       formulas: {
         colorClass: function(get){
