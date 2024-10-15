@@ -25,5 +25,10 @@ Ext.define('Tualo.Fetch',{
         },
         ).then((response) => response.json())
         return result;
+    },
+    get: async function(urlPart){
+
+        let result = await fetch(Ext.getApplication().getAPIPath()+urlPart).then((response) => response.json())
+        return result;
     }
 });
