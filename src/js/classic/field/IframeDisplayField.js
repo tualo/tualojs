@@ -26,7 +26,9 @@ Ext.define('Ext.tualo.form.field.IframeDisplayField', {
       console.log('loadFile',name);
       var me = this;
       var el = document.getElementById(me.id+'-bodyEl');
-      el.innerHTML = '<iframe width="100%" style="max-width:300px;" src="'+ name +'"></iframe>';
+      var w = me.container.getWidth()-24;
+      var h = me.container.getHeight()*0.8;
+      el.innerHTML = '<iframe style="width:'+w+'px; height:'+h+'px" src="'+ name +'"></iframe>';
     }catch(e){
       console.log(e);
     }
