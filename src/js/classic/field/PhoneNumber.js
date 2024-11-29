@@ -68,7 +68,7 @@ Ext.define('Ext.tualo.form.field.PhoneNumberReadonly',  {
 Ext.merge(Ext.util.Format, {
     phonenumberLinkRenderer: function(val,meta,rec){
         const validatePhoneNumberRegex = /^\+?[0-9][0-9]{7,14}$/;
-        let simple = val.replace(/[^0-9\+]/,'')
+        let simple = val.replace(/[^0-9\+]/g,'')
         if ( validatePhoneNumberRegex.test(simple) ){
             return '<a href="tel:'+simple+'">'+val+'</a>';
         }else{
