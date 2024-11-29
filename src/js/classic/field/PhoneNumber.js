@@ -32,27 +32,46 @@ Ext.define('Ext.tualo.form.field.PhoneNumber',  {
     }
 })
 
-/*
-function callNumber(number) {
 
-    $("#templink").attr("href", "tel:" + number);
- 
-    fakeClick(event, document.getElementById("templink"));
- 
-    setTimeout(function () {
-       $('[data-role=popup]').popup('close');
-    }, 1);
- }
- 
- function fakeClick(event, anchorObj) {
-    if (anchorObj.click) {
-       anchorObj.click()
-    } else if (document.createEvent) {
-       if (event.target !== anchorObj) {
-          var evt = document.createEvent("MouseEvents");
-          evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-          var allowDefault = anchorObj.dispatchEvent(evt);
-       }
+Ext.define('Ext.tualo.form.field.PhoneNumberReadonly',  {
+    alias: 'widget.tualophonenumberreadonly',
+    extend: 'Ext.form.field.Text',
+    readOnly: true,
+    onChange: function(newVal, oldVal) {
+        var me = this;
+        document.getElementById(me.id+'-trigger-makeacall').setAttribute("href","tel:"+me.getValue());
+        if (me.getValue()==''){
+            document.getElementById(me.id+'-trigger-makeacall').setAttribute("href","javascript: void(0)");
+        }
+        me.callParent([newVal, oldVal]);
+    },
+    triggers: {
+        makeacall: {
+            cls: 'fa-phone',
+            renderTpl: [
+                '<a href="javascript: void(0)" id="{triggerId}" class="{baseCls} {baseCls}-{ui} {cls} {cls}-{ui} {extraCls} ',
+                        '{childElCls}" style="width: 32px;<tpl if="triggerStyle">{triggerStyle}</tpl>"',
+                        '<tpl if="ariaRole"> role="{ariaRole}"<tpl else> role="presentation"</tpl>',
+                    '>',
+                    '{[values.$trigger.renderBody(values)]}',
+                '</a>'
+            ],
+            
+            handler: function(me) {
+                
+                
+            }
+        }
     }
- }
-*/
+})
+
+Ext.merge(Ext.util.Format, {
+    phonenumberLinkRenderer: function(val,meta,rec){
+        const validatePhoneNumberRegex = /^\+?[1-9][0-9]{7,14}$/;
+        if ( validatePhoneNumberRegex.test(val) ){
+            return '<a href="tel:'+val+'">'+val+'</a>';
+        }else{
+            return val;
+        }
+    }
+})
