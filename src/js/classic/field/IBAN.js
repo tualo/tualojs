@@ -108,7 +108,7 @@ Ext.define('Ext.tualo.form.field.IBAN', {
     var bban = value.substring(4) + ilc;
 
     //var pz_mod = BigInt()(new Big(bban+'')).mod(97).toFixed(0)+"";
-    var pz_mod = BigInt(bban) % 97;
+    var pz_mod = parseInt(  BigInt(bban) % BigInt(97) );
     var pz = (98 - pz_mod).toString();
     while (pz.length < 2) {
       pz = '0' + pz;
