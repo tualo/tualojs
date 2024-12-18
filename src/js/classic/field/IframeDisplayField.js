@@ -32,8 +32,8 @@ Ext.define('Ext.tualo.form.field.IframeDisplayField', {
       }else{
         var el = document.getElementById(me.id+'-bodyEl');
         var w = me.container.getWidth()-24;
-        var h = me.container.getHeight()*0.8;
-        el.innerHTML = '<iframe id="'+me.id+'-iframeEl'+'" style="width:'+w+'px; height:'+h+'px" src="'+ name +'"></iframe>';
+        var h = me.container.getHeight()*0.70;
+        el.innerHTML = '<iframe id="'+me.id+'-iframeEl'+'" style="border:0px;width:'+w+'px; height:'+h+'px" src="'+ name +'"></iframe>';
         me.interval = setInterval(me.fixsize.bind(me),500);
       }
     }catch(e){
@@ -47,7 +47,7 @@ Ext.define('Ext.tualo.form.field.IframeDisplayField', {
 
       if (iframe.style.width != ( me.container.getWidth()-24)+'px' ){
         iframe.style.width =( me.container.getWidth()-24)+'px';
-        iframe.style.height = (me.container.getHeight()*0.8)+'px';
+        iframe.style.height = (me.container.getHeight()*0.70)+'px';
       }
     }else{
       clearInterval(me.interval)
