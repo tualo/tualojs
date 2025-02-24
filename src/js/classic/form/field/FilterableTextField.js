@@ -6,23 +6,23 @@ Ext.define('Tualo.from.fields.TextDSFilter', {
         dsfilter: {
             cls: 'fa-solid fa-filter',
             tooltip: "nach diesem Wert filtern",
-            handler: function(btn) {
-                try{
+            handler: function (btn) {
+                try {
                     f = this.up('form')
                         .up()
                         .getComponent('list')
                         .getColumnManager()
                         .getColumns()
                         .filter(
-                            (f) => f.dataIndex==this.getName() && (typeof f.filter=='object')
+                            (f) => f.dataIndex == this.getName() && (typeof f.filter == 'object')
                         )
                         .pop();
 
                     f.filter.setValue(
-                        this.getValue()+'%'
+                        this.getValue() + '%'
                     )
                     f.filter.setActive(true)
-                }catch(e){
+                } catch (e) {
                     console.error(e)
                 }
             }
