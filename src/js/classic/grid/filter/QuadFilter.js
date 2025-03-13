@@ -3,7 +3,7 @@
  * {@link Ext.data.Store#cfg-filters store filter}.
  * @protected
  */
-Ext.define('Tualo.grid.filters.filter.TriFilter', {
+Ext.define('Tualo.grid.filters.filter.QuadFilter', {
     extend: 'Ext.grid.filters.filter.Base',
 
     /**

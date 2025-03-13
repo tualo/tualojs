@@ -1,6 +1,6 @@
 
 Ext.define('Tualo.grid.filters.filter.Number', {
-    extend: 'Tualo.grid.filters.filter.TriFilter',
+    extend: 'Tualo.grid.filters.filter.QuadFilter',
     alias: ['grid.filter.tualonumber'],
 
     uses: ['Ext.form.field.Number'],
@@ -38,7 +38,7 @@ Ext.define('Tualo.grid.filters.filter.Number', {
                 margin: 0
             },
             neq: {
-                iconCls: Ext.baseCSSPrefix + 'grid-filters-neq',
+                iconCls: 'fa fa-solid fa-not-equal', //Ext.baseCSSPrefix + 'grid-filters-neq',
                 margin: 0
             }
         }
