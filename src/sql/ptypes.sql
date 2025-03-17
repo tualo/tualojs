@@ -7,5 +7,7 @@ INSERT IGNORE INTO `ds_listplugins_ptypes` (`type`) VALUES ('gridsummaries');
 
 
 INSERT IGNORE INTO `ds_listplugins_ptypes` (`type`) VALUES ('tualolinker');
+INSERT IGNORE INTO `ds_listplugins_ptypes` (`type`) VALUES ('tualopug');
+
 
 
