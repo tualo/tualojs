@@ -562,7 +562,6 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
             summaryData = ownerGroup ? me.summaryData[ownerGroup] : me.summaryData,
             // Use the column.getItemId() for columns without a dataIndex. The populateRecord method does the same. 
             dataIndex = column.dataIndex || column.getItemId();
-        console.log('createRenderer', column, record);
 
         if (typeof column[me.rendererFieldName] == 'string') {
             column[me.rendererFieldName] = me.getFNFromString(column[me.rendererFieldName]);
@@ -609,7 +608,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
             if (column[this.summaryTypeFieldName] || column[this.rendererFieldName]) {
                 column.renderer = this.createRenderer(column, summaryRecord);
             } else {
-                console.log('empty', column);
+                // console.log('empty', column);
                 column.renderer = this.noRenderer;
             }
         }
@@ -915,7 +914,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         // It's not dirty 
         summaryRecord.commit(true);
         summaryRecord.isSummary = true;
-        console.log('summaryRecord', summaryRecord);
+
         return summaryRecord;
     },
 
