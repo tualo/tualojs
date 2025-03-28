@@ -140,6 +140,27 @@ Ext.define('Tualo.grid.filters.filter.Number', {
         this.setValue(value);
     },
 
+    setFilterObject: function (filter) {
+        var me = this,
+            fields = me.fields,
+            key;
+        if (this.menu == null) {
+            me.createMenu();
+        }
+
+        for (key in fields) {
+            if (fields.hasOwnProperty(key)) {
+                if (key == filter.operator) {
+                    if (typeof fields[key].setValue == 'function') {
+                        fields[key].setValue(filter.value);
+                    } else {
+                        console.error('setFilterObject', key, fields[key], filter.value);
+                    }
+                }
+            }
+        }
+    },
+
     stopFn: function (e) {
         e.stopPropagation();
     }
