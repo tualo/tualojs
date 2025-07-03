@@ -1,20 +1,23 @@
 {
-    "name": "tualo/tualojs",
-    "description": "JS Components Library for tualo office",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Thomas Hoffmann",
-            "email": "thomas.hoffmann@tualo.de"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Tualo\\Office\\TualoJS\\": "src/"
-        },
-        "files": ["src/functions.php"]
+  "name": "tualo/tualojs",
+  "description": "JS Components Library for tualo office",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Hoffmann",
+      "email": "thomas.hoffmann@tualo.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Tualo\\Office\\TualoJS\\": "src/"
     },
-    "minimum-stability": "dev",
-    "require": {}
+    "files": [
+      "src/functions.php"
+    ]
+  },
+  "minimum-stability": "dev",
+  "require": {},
+  "version": "1.0.1"
 }
