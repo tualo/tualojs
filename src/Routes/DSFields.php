@@ -41,7 +41,7 @@ class DSFields implements IRoute
                     'tablename' => [
                         'required' => false,
                         'type' => 'string',
-                        'max_length' => 50,
+                        'max_length' => 128,
                         'pattern' => '/^[a-zA-ZäöüÄÖÜß\w\d]+$/u'
                     ]
                 ]
