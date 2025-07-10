@@ -5,6 +5,7 @@ namespace Tualo\Office\TualoJS\Routes;
 use Tualo\Office\Basic\TualoApplication;
 use Tualo\Office\Basic\Route;
 use Tualo\Office\Basic\IRoute;
+use Tualo\Office\DS\Routes\DS;
 
 
 class DSFields implements IRoute
@@ -37,14 +38,7 @@ class DSFields implements IRoute
             [
                 'errorOnUnexpected' => true,
                 'errorOnInvalid' => true,
-                'fields' => [
-                    'tablename' => [
-                        'required' => false,
-                        'type' => 'string',
-                        'max_length' => 128,
-                        'pattern' => '/^[a-zA-ZäöüÄÖÜß\w\d]+$/u'
-                    ]
-                ]
+                'fields' => DS::DefaultExpectedFields
             ]
         );
     }
