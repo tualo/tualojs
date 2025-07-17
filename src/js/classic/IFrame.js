@@ -9,7 +9,8 @@ Ext.define('Tualo.tualojs.IFrame', {
     src: 'about:blank',
 
     renderTpl: [
-        '<iframe src="{src}" id="{id}-iframeEl" data-ref="iframeEl" name="{frameName}" width="100%" height="100%" frameborder="0" sandbox="allow-scripts"></iframe>'
+        // '<iframe src="{src}" id="{id}-iframeEl" data-ref="iframeEl" name="{frameName}" width="100%" height="100%" frameborder="0" sandbox="allow-scripts"></iframe>'
+        '<iframe src="{src}" id="{id}-iframeEl" data-ref="iframeEl" name="{frameName}" width="100%" height="100%" frameborder="0"></iframe>'
     ],
     childEls: ['iframeEl'],
 
