@@ -1,4 +1,4 @@
-Ext.define('Tualo.tualojs.Format', {
+Ext.define('Tualo.tualojs.Format.Renderer', {
   singleton: true,
   euroRenderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
     if (value === null || value === undefined) return '';
@@ -66,16 +66,15 @@ Ext.define('Tualo.tualojs.Format', {
 });
 
 Ext.merge(Ext.util.Format, {
-  euroRenderer: Tualo.tualojs.Format.euroRenderer,
-  deMoneyRenderer: Tualo.tualojs.Format.euroRenderer,
-  deColoredMoneyRenderer: Tualo.tualojs.Format.euroRenderer,
-  fullPercentRenderer: Tualo.tualojs.Format.fullPercentRenderer,
-  dePercentRenderer: Tualo.tualojs.Format.dePercentRenderer,
-  CSSMetaRenderer: Tualo.tualojs.Format.CSSMetaRenderer,
-  'Tualo.renderer.CSSMetaRenderer': Tualo.tualojs.Format.CSSMetaRenderer,
-  BackgroundColorMetaRenderer: Tualo.tualojs.Format.backgroundColorMetaRenderer,
-  deValueRenderer: Tualo.tualojs.Format.deValueRenderer,
-  deNatualRenderer: Tualo.tualojs.Format.deNatualRenderer,
-  deDate: Tualo.tualojs.Format.deDate,
-  deDateTime: Tualo.tualojs.Format.deDateTime
+  euroRenderer: Tualo.tualojs.Format.Renderer.euroRenderer,
+  deMoneyRenderer: Tualo.tualojs.Format.Renderer.euroRenderer,
+  deColoredMoneyRenderer: Tualo.tualojs.Format.Renderer.euroRenderer,
+  fullPercentRenderer: Tualo.tualojs.Format.Renderer.fullPercentRenderer,
+  dePercentRenderer: Tualo.tualojs.Format.Renderer.dePercentRenderer,
+  CSSMetaRenderer: Tualo.tualojs.Format.Renderer.CSSMetaRenderer,
+  BackgroundColorMetaRenderer: Tualo.tualojs.Format.Renderer.backgroundColorMetaRenderer,
+  deValueRenderer: Tualo.tualojs.Format.Renderer.deValueRenderer,
+  deNatualRenderer: Tualo.tualojs.Format.Renderer.deNatualRenderer,
+  deDate: Tualo.tualojs.Format.Renderer.deDate,
+  deDateTime: Tualo.tualojs.Format.Renderer.deDateTime
 });
