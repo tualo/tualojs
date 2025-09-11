@@ -62,13 +62,26 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
   },
   deDate: function (val, meta, rec) {
     return Ext.util.Format.date(val, 'd.m.Y');
+  },
+  deWeekday: function (val, meta, rec) {
+    let dayNames = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+    if (val === null || val === undefined) return '';
+    return dayNames[val];
+  },
+  deMonth: function (val, meta, rec) {
+    let monthNames = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+    if (val === null || val === undefined) return '';
+    return monthNames[val - 1];
+  },
+  deShortDate: function (val, meta, rec) {
+    return Ext.util.Format.date(val, 'd.m');
   }
 });
 
 Ext.merge(Ext.util.Format, {
   euroRenderer: Tualo.tualojs.Format.Renderer.euroRenderer,
   deMoneyRenderer: Tualo.tualojs.Format.Renderer.euroRenderer,
-  deColoredMoneyRenderer: Tualo.tualojs.Format.Renderer.euroRenderer,
+  deColoredMoneyRenderer: Tualo.tualojs.Format.Renderer.deColoredMoneyRenderer,
   fullPercentRenderer: Tualo.tualojs.Format.Renderer.fullPercentRenderer,
   dePercentRenderer: Tualo.tualojs.Format.Renderer.dePercentRenderer,
   CSSMetaRenderer: Tualo.tualojs.Format.Renderer.CSSMetaRenderer,
@@ -76,5 +89,8 @@ Ext.merge(Ext.util.Format, {
   deValueRenderer: Tualo.tualojs.Format.Renderer.deValueRenderer,
   deNatualRenderer: Tualo.tualojs.Format.Renderer.deNatualRenderer,
   deDate: Tualo.tualojs.Format.Renderer.deDate,
+  deMonth: Tualo.tualojs.Format.Renderer.deMonth,
+  deWeekday: Tualo.tualojs.Format.Renderer.deWeekday,
+  deShortDate: Tualo.tualojs.Format.Renderer.deShortDate,
   deDateTime: Tualo.tualojs.Format.Renderer.deDateTime
 });
