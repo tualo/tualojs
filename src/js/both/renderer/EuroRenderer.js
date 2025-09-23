@@ -6,6 +6,7 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
   },
   deColoredMoneyRenderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
     if (value === null || value === undefined) return '';
+    if (metaData === null || metaData === undefined) metaData = {};
     if (value > 0) {
       metaData.tdStyle = 'color: green;';
       // return '<span style="color:green;">'+Ext.util.Format.number(value,'0,000.00 €')+'</span>';
@@ -60,6 +61,9 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
   deDateTime: function (val, meta, rec) {
     return Ext.util.Format.date(val, 'd.m.Y H:i');
   },
+  deTime: function (val, meta, rec) {
+    return Ext.util.Format.date(val, 'H:i:s');
+  },
   deDate: function (val, meta, rec) {
     return Ext.util.Format.date(val, 'd.m.Y');
   },
@@ -92,5 +96,6 @@ Ext.merge(Ext.util.Format, {
   deMonth: Tualo.tualojs.Format.Renderer.deMonth,
   deWeekday: Tualo.tualojs.Format.Renderer.deWeekday,
   deShortDate: Tualo.tualojs.Format.Renderer.deShortDate,
-  deDateTime: Tualo.tualojs.Format.Renderer.deDateTime
+  deDateTime: Tualo.tualojs.Format.Renderer.deDateTime,
+  deTime: Tualo.tualojs.Format.Renderer.deTime
 });
