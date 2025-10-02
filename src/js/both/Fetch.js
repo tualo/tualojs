@@ -1,6 +1,6 @@
-Ext.define('Tualo.Fetch',{
+Ext.define('Tualo.Fetch', {
     singleton: true,
-    getFormData: function(object) {
+    getFormData: function (object) {
 
         let formBody = [];
         for (let key in object) {
@@ -11,24 +11,24 @@ Ext.define('Tualo.Fetch',{
         formBody = formBody.join('&');
         return formBody;
     },
-    post: async function(urlPart,data){
+    post: async function (urlPart, data) {
 
         let frmData = this.getFormData(data);
         let result = await fetch(
-        Ext.getApplication().getAPIPath()+urlPart,
-        {
-            method: "POST",
-            body: frmData,
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            }
-        },
+            Ext.getApplication().getAPIPath() + urlPart,
+            {
+                method: "POST",
+                body: frmData,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            },
         ).then((response) => response.json())
         return result;
     },
-    get: async function(urlPart){
+    get: async function (urlPart) {
 
-        let result = await fetch(Ext.getApplication().getAPIPath()+urlPart).then((response) => response.json())
+        let result = await fetch(Ext.getApplication().getAPIPath() + urlPart).then((response) => response.json())
         return result;
     }
 });
