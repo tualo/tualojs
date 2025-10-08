@@ -79,6 +79,13 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
   },
   deShortDate: function (val, meta, rec) {
     return Ext.util.Format.date(val, 'd.m');
+  },
+  checkRenderer: function (val, meta, rec) {
+    if (val) {
+      return '<i class="fa fa-check"></i>';
+    } else {
+      return '<i class="fa fa-square-o"></i>';
+    }
   }
 });
 
@@ -97,5 +104,6 @@ Ext.merge(Ext.util.Format, {
   deWeekday: Tualo.tualojs.Format.Renderer.deWeekday,
   deShortDate: Tualo.tualojs.Format.Renderer.deShortDate,
   deDateTime: Tualo.tualojs.Format.Renderer.deDateTime,
-  deTime: Tualo.tualojs.Format.Renderer.deTime
+  deTime: Tualo.tualojs.Format.Renderer.deTime,
+  checkRenderer: Tualo.tualojs.Format.Renderer.checkRenderer
 });
