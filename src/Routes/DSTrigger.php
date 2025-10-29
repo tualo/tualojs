@@ -8,7 +8,7 @@ use Tualo\Office\Basic\IRoute;
 use Tualo\Office\DS\Routes\DS;
 
 
-class DSTrigger implements IRoute
+class DSTrigger extends \Tualo\Office\Basic\RouteWrapper
 {
     public static function register()
     {
