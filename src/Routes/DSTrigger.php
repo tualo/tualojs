@@ -10,6 +10,11 @@ use Tualo\Office\DS\Routes\DS;
 
 class DSTrigger extends \Tualo\Office\Basic\RouteWrapper
 {
+    public static function scope(): string
+    {
+        return 'tualojs.dstrigger';
+    }
+
     public static function register()
     {
         Route::add(
@@ -35,7 +40,8 @@ class DSTrigger extends \Tualo\Office\Basic\RouteWrapper
                 'errorOnUnexpected' => true,
                 'errorOnInvalid' => true,
                 'fields' => DS::DefaultExpectedFields
-            ]
+            ],
+            self::scope()
         );
     }
 }

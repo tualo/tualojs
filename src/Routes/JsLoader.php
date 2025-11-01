@@ -9,6 +9,10 @@ use Tualo\Office\Basic\IRoute;
 
 class JsLoader extends \Tualo\Office\Basic\RouteWrapper
 {
+    public static function scope(): string
+    {
+        return 'tualojs.jsloader';
+    }
     public static function register()
     {
 
@@ -22,7 +26,7 @@ class JsLoader extends \Tualo\Office\Basic\RouteWrapper
                 ]
             ]);
             App::result('success', true);
-        }, ['get'], false);
+        }, ['get'], false, [], self::scope());
 
 
         BasicRoute::add('/tualojs-requires', function ($matches) {
@@ -34,7 +38,7 @@ class JsLoader extends \Tualo\Office\Basic\RouteWrapper
                 ]
             ]);
             App::result('success', true);
-        }, ['get'], false);
+        }, ['get'], false, [], self::scope());
 
         BasicRoute::add('/tualojs/(?P<file>[\w.\/\-]+).js', function ($matches) {
             RouteSecurityHelper::serveSecureStaticFile(
@@ -43,6 +47,6 @@ class JsLoader extends \Tualo\Office\Basic\RouteWrapper
                 ['js'],
                 ['js' => ['application/javascript']]
             );
-        }, ['get'], false);
+        }, ['get'], false, [], self::scope());
     }
 }

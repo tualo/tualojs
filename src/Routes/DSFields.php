@@ -10,6 +10,11 @@ use Tualo\Office\DS\Routes\DS;
 
 class DSFields extends \Tualo\Office\Basic\RouteWrapper
 {
+    public static function scope(): string
+    {
+        return 'tualojs.dsfields';
+    }
+
     public static function register()
     {
         Route::add(
@@ -39,7 +44,8 @@ class DSFields extends \Tualo\Office\Basic\RouteWrapper
                 'errorOnUnexpected' => true,
                 'errorOnInvalid' => true,
                 'fields' => DS::DefaultExpectedFields
-            ]
+            ],
+            self::scope()
         );
     }
 }
