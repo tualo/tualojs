@@ -28,7 +28,12 @@ Ext.define('Tualo.Fetch', {
     },
     get: async function (urlPart) {
 
-        let result = await fetch(Ext.getApplication().getAPIPath() + urlPart).then((response) => response.json())
+        let result = await fetch(Ext.getApplication().getAPIPath() + urlPart, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+        }).then((response) => response.json())
         return result;
     }
 });
