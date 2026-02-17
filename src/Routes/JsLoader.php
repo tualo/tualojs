@@ -34,7 +34,7 @@ class JsLoader extends \Tualo\Office\Basic\RouteWrapper
             $db = App::get('session')->getDB();
             App::contenttype('application/json');
             $list = $db->direct('select 
-                replace( concat(filepath,"/",filename),"/",".") type,
+                replace( concat(filepath,"/",filename),"/",".") type
             from tualojs where is_required = 1', []);
 
             App::result('data', $list);
