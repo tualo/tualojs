@@ -3,7 +3,7 @@ Ext.define('Tualo.grid.column.Color', {
     alias: 'widget.tualocolorcolumn',
     align: 'left',
     renderer: function (val, meta, rec) {
-        meta.tdStyle = 'background-color:' + val + '; color:' + val + '; filter: invert(100%);';
+        meta.tdStyle = 'background-color:' + val + '; filter: invert(0%);';
         return val;
     }
 });
