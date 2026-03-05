@@ -1482,6 +1482,46 @@ values
 values
     (vendor);
 
+
+
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
+values
+    (
+        "Tualo",
+        "Tualo.form.field.AlignField",
+        "#name",
+        "widget.tualo_align_field",
+        "Ext.form.field.ComboBox",
+        "widget.tualo_align_field",
+        "Ext.field.ComboBox"
+    ) on duplicate key
+update
+    id =
+values
+    (id),
+    xtype_long_classic =
+values
+    (xtype_long_classic),
+    extendsxtype_classic =
+values
+    (extendsxtype_classic),
+    name =
+values
+    (name),
+    vendor =
+values
+    (vendor);
+
+
 insert
     ignore into custom_types (
         vendor,

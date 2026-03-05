@@ -1,6 +1,6 @@
-Ext.define('Tualo.form.field.Sortdirection', {
+Ext.define('Tualo.form.field.AlignField', {
   extend: 'Ext.form.field.ComboBox',
-  alias: ['widget.tualo_sort_direction'],
+  alias: ['widget.tualo_align_field'],
   valueField: 'id',
   displayField: 'id',
   anchor: '100%',
@@ -16,8 +16,11 @@ Ext.define('Tualo.form.field.Sortdirection', {
         { name: 'id', type: 'string' }
       ],
       data: [
-        ['asc'],
-        ['desc']
+        ['start'],
+        ['end'],
+        ['left'],
+        ['right'],
+        ['center']
       ]
     });
     this.callParent(arguments);
