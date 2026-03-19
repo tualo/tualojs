@@ -14,7 +14,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.BIC",
-        "#name",
+        "Ext.tualo.form.field.BIC",
         "widget.bic",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -51,7 +51,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Base64Image",
-        "#name",
+        "Ext.tualo.form.field.Base64Image",
         "widget.base64imagedisplayfield",
         "Ext.form.field.Base",
         "widget.textarea",
@@ -88,7 +88,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Colors",
-        "#name",
+        "Ext.tualo.form.field.Colors",
         "widget.colorcombo",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -125,7 +125,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.CryptoField",
-        "#name",
+        "Ext.tualo.form.field.CryptoField",
         "widget.tualocryptofield",
         "Ext.form.field.Text",
         "widget.textarea",
@@ -162,7 +162,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.CurrencyDisplayField",
-        "#name",
+        "Ext.tualo.form.field.CurrencyDisplayField",
         "widget.tualocurrencydisplayfield",
         "Ext.form.field.Display",
         "widget.textarea",
@@ -199,7 +199,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.CurrentDateField",
-        "#name",
+        "Ext.tualo.form.field.CurrentDateField",
         "widget.tualocurrentdatefield",
         "Ext.form.field.Date",
         "widget.textarea",
@@ -236,7 +236,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.CurrentTimeField",
-        "#name",
+        "Ext.tualo.form.field.CurrentTimeField",
         "widget.tualocurrenttimefield",
         "Ext.form.field.Time",
         "widget.textarea",
@@ -273,7 +273,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.DSFields",
-        "#name",
+        "Ext.tualo.form.field.DSFields",
         "widget.tualodsfields",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -310,7 +310,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.DSTrigger",
-        "#name",
+        "Ext.tualo.form.field.DSTrigger",
         "widget.tualodstrigger",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -347,7 +347,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.DateDisplayField",
-        "#name",
+        "Ext.tualo.form.field.DateDisplayField",
         "widget.tualodatedisplayfield",
         "Ext.form.field.Display",
         "widget.textarea",
@@ -384,7 +384,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.DateFormulaField",
-        "#name",
+        "Ext.tualo.form.field.DateFormulaField",
         "widget.tualodateformula",
         "Ext.form.field.Text",
         "widget.textarea",
@@ -421,7 +421,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.DatetimeDisplayField",
-        "#name",
+        "Ext.tualo.form.field.DatetimeDisplayField",
         "widget.tualodatetimedisplayfield",
         "Ext.form.field.Display",
         "widget.textarea",
@@ -458,7 +458,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Document",
-        "#name",
+        "Ext.tualo.form.field.Document",
         "widget.dsdocumentfield",
         "Ext.form.field.Text",
         "widget.textarea",
@@ -495,7 +495,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.DocumentAutoSave",
-        "#name",
+        "Ext.tualo.form.field.DocumentAutoSave",
         "widget.dsdocumentfieldautosave",
         "Ext.tualo.form.field.Document",
         "widget.textarea",
@@ -532,7 +532,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.DocumentX",
-        "#name",
+        "Ext.tualo.form.field.DocumentX",
         "widget.dsdocumentfieldx",
         "Ext.form.FieldContainer",
         "widget.textarea",
@@ -569,7 +569,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.DocumentDisplayField",
-        "#name",
+        "Ext.tualo.form.field.DocumentDisplayField",
         "widget.dsdocumentdisplayfield",
         "Ext.form.field.Display",
         "widget.textarea",
@@ -606,7 +606,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.FileSizeDisplayField",
-        "#name",
+        "Ext.tualo.form.field.FileSizeDisplayField",
         "widget.tualodisplayfilesizefield",
         "Ext.form.field.Display",
         "widget.textarea",
@@ -643,7 +643,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.IBAN",
-        "#name",
+        "Ext.tualo.form.field.IBAN",
         "widget.iban",
         "Ext.form.field.Text",
         "widget.textarea",
@@ -680,7 +680,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.IPv4Field",
-        "#name",
+        "Ext.tualo.form.field.IPv4Fiel",
         "widget.tualoip4field",
         "Ext.form.field.Text",
         "widget.textarea",
@@ -717,7 +717,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.IMageDisplayField",
-        "#name",
+        "Ext.tualo.form.field.IMageDisplayField",
         "widget.imagedisplayfield",
         "Ext.form.field.Display",
         "widget.textarea",
@@ -754,7 +754,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.JSONFormel",
-        "#name",
+        "Ext.tualo.form.field.JSONFormel",
         "widget.tualojsonformel",
         "Ext.form.field.Text",
         "widget.textarea",
@@ -791,7 +791,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Kontenbezug",
-        "#name",
+        "Ext.tualo.form.field.Kontenbezug",
         "widget.tualokontenbezug",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -828,7 +828,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Lagerbewegung",
-        "#name",
+        "Ext.tualo.form.field.Lagerbewegung",
         "widget.tualolagerbewegung",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -865,7 +865,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.LargeLabelCheckbox",
-        "#name",
+        "Ext.tualo.form.field.LargeLabelCheckbox",
         "widget.largelabelcheckbox",
         "Ext.form.field.Checkbox",
         "widget.textarea",
@@ -902,7 +902,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.LargeTextArea",
-        "#name",
+        "Ext.tualo.form.field.LargeTextArea",
         "widget.tualolargetextarea",
         "Ext.form.field.TextArea",
         "widget.textarea",
@@ -939,7 +939,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.ListSelection",
-        "#name",
+        "Ext.tualo.form.field.ListSelection",
         "widget.tualolistselection",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -976,7 +976,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Logins",
-        "#name",
+        "Ext.tualo.form.field.Logins",
         "widget.tualologins",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -1013,7 +1013,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.MD5",
-        "#name",
+        "Ext.tualo.form.field.MD5",
         "widget.undefined",
         "Ext.panel.Panel",
         "widget.textarea",
@@ -1050,7 +1050,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Number5",
-        "#name",
+        "Ext.tualo.form.field.Number5",
         "widget.number5",
         "Ext.form.field.Number",
         "widget.textarea",
@@ -1087,7 +1087,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Number2",
-        "#name",
+        "Ext.tualo.form.field.Number2",
         "widget.number2",
         "Ext.form.field.Number",
         "widget.textarea",
@@ -1124,7 +1124,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Number0",
-        "#name",
+        "Ext.tualo.form.field.Number0",
         "widget.number0",
         "Ext.form.field.Number",
         "widget.textarea",
@@ -1161,7 +1161,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Password",
-        "#name",
+        "Ext.tualo.form.field.Password",
         "widget.tualopasswordfield",
         "Ext.form.field.Text",
         "widget.textarea",
@@ -1198,7 +1198,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.PhoneNumber",
-        "#name",
+        "Ext.tualo.form.field.PhoneNumber",
         "widget.tualophonenumber",
         "Ext.form.field.Text",
         "widget.textarea",
@@ -1235,7 +1235,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.RPTLockField",
-        "#name",
+        "Ext.tualo.form.field.RPTLockField",
         "widget.tualorptlockfield",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -1272,7 +1272,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.ReportAmountFieldWS",
-        "#name",
+        "Ext.tualo.form.field.ReportAmountFieldWS",
         "widget.tualoreportamountfieldws",
         "Ext.form.field.Number",
         "widget.textarea",
@@ -1309,7 +1309,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.ReportPlaceHolder",
-        "#name",
+        "Ext.tualo.form.field.ReportPlaceHolder",
         "widget.tualoreportplaceholder",
         "Ext.form.FieldContainer",
         "widget.textarea",
@@ -1346,7 +1346,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.StoreField",
-        "#name",
+        "Ext.tualo.form.field.StoreField",
         "widget.tualostorefield",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -1383,7 +1383,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.SummaryRenderer",
-        "#name",
+        "Ext.tualo.form.field.SummaryRendere",
         "widget.tualosummaryrenderer",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -1420,7 +1420,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.SummaryType",
-        "#name",
+        "Ext.tualo.form.field.SummaryType",
         "widget.tualosummarytype",
         "Ext.form.field.ComboBox",
         "widget.textarea",
@@ -1445,6 +1445,45 @@ values
 
 
 
+
+
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
+values
+    (
+        "Tualo",
+        "Tualo.tualojs.form.field.Gridrenderer",
+        "Tualo.tualojs.form.field.Gridrenderer",
+        "widget.tualogridrenderer",
+        "Ext.form.field.ComboBox",
+        "widget.textarea",
+        "Ext.field.Text"
+    ) on duplicate key
+update
+    id =
+values
+    (id),
+    xtype_long_classic =
+values
+    (xtype_long_classic),
+    extendsxtype_classic =
+values
+    (extendsxtype_classic),
+    name =
+values
+    (name),
+    vendor =
+values
+    (vendor);
+
 insert
     ignore into custom_types (
         vendor,
@@ -1459,7 +1498,7 @@ values
     (
         "Tualo",
         "Tualo.form.field.Sortdirection",
-        "#name",
+        "Tualo.form.field.Sortdirection",
         "widget.tualo_sort_direction",
         "Ext.form.field.ComboBox",
         "widget.tualo_sort_direction",
@@ -1498,7 +1537,7 @@ values
     (
         "Tualo",
         "Tualo.form.field.AlignField",
-        "#name",
+        "Tualo.form.field.AlignField",
         "widget.tualo_align_field",
         "Ext.form.field.ComboBox",
         "widget.tualo_align_field",
@@ -1536,7 +1575,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.Text",
-        "#name",
+        "Ext.tualo.form.field.Text",
         "widget.tualotextfield",
         "Ext.form.field.Text",
         "widget.textarea",
@@ -1573,7 +1612,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.TextTemplates",
-        "#name",
+        "Ext.tualo.form.field.TextTemplates",
         "widget.tualotexttemplates_{alias}",
         "Ext.form.field.TextArea",
         "widget.textarea",
@@ -1610,7 +1649,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.TualoTimeField",
-        "#name",
+        "Ext.tualo.form.field.TualoTimeField",
         "widget.tualotimefield",
         "Ext.form.field.Time",
         "widget.textarea",
@@ -1647,7 +1686,7 @@ values
     (
         "Tualo",
         "Ext.tualo.form.field.XCheckbox",
-        "#name",
+        "Ext.tualo.form.field.XCheckbox",
         "widget.xcheckbox",
         "Ext.form.field.Checkbox",
         "widget.textarea",
@@ -2109,6 +2148,47 @@ values
         "Tualo.form.field.Color",
         "Tualo.form.field.Color",
         "widget.tualocolorfield",
+        "Ext.form.field.Text",
+        "widget.text",
+        "Ext.field.Text"
+    ) on duplicate key
+update
+    id =
+values
+    (id),
+    xtype_long_classic =
+values
+    (xtype_long_classic),
+    extendsxtype_classic =
+values
+    (extendsxtype_classic),
+    name =
+values
+    (name),
+    vendor =
+values
+    (vendor);
+
+
+
+
+
+insert
+    ignore into custom_types (
+        vendor,
+        name,
+        id,
+        xtype_long_classic,
+        extendsxtype_classic,
+        xtype_long_modern,
+        extendsxtype_modern
+    )
+values
+    (
+        "Tualo",
+        "Tualo.DS.fields.fields.ListXtypeComboBox",
+        "Tualo.DS.fields.fields.ListXtypeComboBox",
+        "widget.listxtype_combobox",
         "Ext.form.field.Text",
         "widget.text",
         "Ext.field.Text"

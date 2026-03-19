@@ -86,6 +86,11 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     } else {
       return '<i class="fa fa-square-o"></i>';
     }
+  },
+  colorRenderer: function (val, meta, rec) {
+    meta.tdStyle = 'background-color:' + val + ';';
+    return val;
+
   }
 });
 
@@ -105,5 +110,6 @@ Ext.merge(Ext.util.Format, {
   deShortDate: Tualo.tualojs.Format.Renderer.deShortDate,
   deDateTime: Tualo.tualojs.Format.Renderer.deDateTime,
   deTime: Tualo.tualojs.Format.Renderer.deTime,
-  checkRenderer: Tualo.tualojs.Format.Renderer.checkRenderer
+  checkRenderer: Tualo.tualojs.Format.Renderer.checkRenderer,
+  colorRenderer: Tualo.tualojs.Format.Renderer.colorRenderer
 });
