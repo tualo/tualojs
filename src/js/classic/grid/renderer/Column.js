@@ -1,4 +1,4 @@
-Ext.define('Override.grid.column.Column', {
+Ext.define('Tualo.override.grid.column.Column', {
     override: 'Ext.grid.column.Column',
 
     bindRenderer: function (renderer) {
