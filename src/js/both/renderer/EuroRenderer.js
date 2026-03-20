@@ -88,7 +88,13 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     }
   },
   colorRenderer: function (val, meta, rec) {
-    meta.tdStyle = 'background-color:' + val + ';';
+    let prefix = '#';
+    if (meta === null || meta === undefined) meta = {};
+    if (val === null || val === undefined) return '';
+    if (val[0] === '#') val = val.substring(1);
+    if (val.indexOf("rgb") === 0) prefix = '';
+
+    meta.tdStyle = 'background-color: ' + prefix + val + ';';
     return val;
 
   }
