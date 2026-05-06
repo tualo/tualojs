@@ -48,7 +48,8 @@ Ext.define('Tualo.project.form.field.Anschprechpartner', {
 
                 } else {
                     if (btn.getSelectedRecord().get('mail')) {
-                        window.open('mailto:' + btn.getSelectedRecord().get('mail'), '_blank');
+                        let subject = encodeURIComponent(this.getCurrentRecord().get('job_name'));
+                        window.open('mailto:' + btn.getSelectedRecord().get('mail') + '?subject=' + subject, '_blank');
 
                     }
                 }
