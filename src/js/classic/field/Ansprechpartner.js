@@ -3,18 +3,59 @@ Ext.define('Tualo.project.form.field.Anschprechpartner', {
     alias: ['widget.tualo_job_ansprechpartner'],
 
     valueField: 'id',
-    displayField: 'name',
+    displayField: 'anzeige_name',
     anchor: '100%',
     maxLength: 255,
     // queryMode: 'local',
     minChars: 2,
 
     triggers: {
+        openphone: {
+            cls: 'x-fa fa-phone',
+            tooltip: "Telefonieren",
+            handler: function (btn) {
+                if (btn.getSelectedRecord() == null) {
+                    btn.getStore().load({
+                        callback: function () {
+                            if (btn.getSelectedRecord().get('telefon')) {
+                                window.open('tel:' + btn.getSelectedRecord().get('telefon'), '_blank');
+                            }
+                        }
+                    })
+
+                } else {
+                    if (btn.getSelectedRecord().get('telefon')) {
+                        window.open('tel:' + btn.getSelectedRecord().get('telefon'), '_blank');
+                    }
+                }
+            }
+        },
+
+        openmail: {
+            cls: 'x-fa fa-envelope',
+            tooltip: "E-Mail senden",
+            handler: function (btn) {
+                if (btn.getSelectedRecord() == null) {
+                    btn.getStore().load({
+                        callback: function () {
+                            if (btn.getSelectedRecord().get('email')) {
+                                window.open('mailto:' + btn.getSelectedRecord().get('email'), '_blank');
+                            }
+                        }
+                    })
+
+                } else {
+                    if (btn.getSelectedRecord().get('email')) {
+                        window.open('mailto:' + btn.getSelectedRecord().get('email'), '_blank');
+                    }
+                }
+            }
+        },
         opends: {
             cls: 'x-fa fa-link',
             tooltip: "Den Datensatz öffnen",
             handler: function (btn) {
-                let route = "#ds/ansprechpartner/kundennummer/" + btn.getValue();
+                let route = "#ds/ansprechpartner/id/" + btn.getValue();
                 if (btn.getSelectedRecord() == null) {
                     btn.getStore().load({
                         callback: function () {
