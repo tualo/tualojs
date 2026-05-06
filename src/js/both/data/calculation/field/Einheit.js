@@ -35,7 +35,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
                         });
                         return;
                     }
-                    record.set('einheit', data.data[0].faktor * 1.0);
+                    record.set('einheit', data.data[0].einheit);
                 };
                 fn();
             }
