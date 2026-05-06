@@ -5,7 +5,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Net', {
     ],
     calculate: function (data) {
         console.log('Net calculate start', data);
-        v = data.anzahl * data.epreis * data.einheit_faktor;
+        v = data.anzahl * data.ek_preis * data.einheit_faktor;
         if (data.markup) {
             v += data.markup;
         }
@@ -16,5 +16,5 @@ Ext.define('Tualo.tualojs.data.calculation.field.Net', {
     },
     critical: true,
     persist: true,
-    depends: ['einheit_faktor', 'anzahl', 'epreis', 'markup', 'markup_percent'],
+    depends: ['einheit_faktor', 'anzahl', 'ek_preis', 'markup', 'markup_percent'],
 });
