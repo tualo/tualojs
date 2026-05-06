@@ -15,7 +15,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
                 let request = await fetch('./ds/mengeneinheiten/read/' + type);
                 if (!request.ok) {
                     Ext.toast({
-                        html: `Fehler beim Abrufen ${type} Daten`,
+                        html: 'Fehler beim Abrufen ' + type + ' Daten',
                         title: 'Fehler',
                         width: 200,
                         align: 't'
