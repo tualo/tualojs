@@ -7,7 +7,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
     convert: function (currentValue, record) {
         let doQuery = true;
 
-        console.log('TualoSinglePrice convert start', record);
+        console.log('Einheit convert start', record);
         if (!Ext.isEmpty(record.get('artikel'))) {
             if (typeof record.modified == 'undefined') return currentValue * 1;
             if (record.modified) {
