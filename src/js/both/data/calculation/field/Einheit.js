@@ -12,7 +12,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
             if (typeof record.modified == 'undefined') return currentValue * 1;
             if (record.modified) {
                 let type = record.get('artikel');
-                let request = await fetch(`./ds/mengeneinheiten/read/${type}`);
+                let request = await fetch('./ds/mengeneinheiten/read/' + type);
                 if (!request.ok) {
                     Ext.toast({
                         html: `Fehler beim Abrufen ${type} Daten`,
