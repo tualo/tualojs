@@ -37,6 +37,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.EinheitFaktor', {
                             });
                             return;
                         }
+                        me.lastQuery = data.data[0].faktor;
                         record.set('einheit_faktor', data.data[0].faktor * 1.0);
                     };
                     fn();
