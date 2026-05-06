@@ -29,7 +29,7 @@ Ext.define('Tualo.project.form.field.Anschprechpartner', {
     },
 
     constructor: function (config) {
-        this.store = Ext.create('Tualo.DataSets.store.ansprechpartner', {});
+        this.store = Ext.create('Tualo.DataSets.store.Ansprechpartner', {});
         this.callParent([config]);
         this.store.on('beforeload', this.onStoreBeforeLoad, this);
         this.getStore().load();
