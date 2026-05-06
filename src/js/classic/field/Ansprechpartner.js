@@ -38,15 +38,15 @@ Ext.define('Tualo.project.form.field.Anschprechpartner', {
                 if (btn.getSelectedRecord() == null) {
                     btn.getStore().load({
                         callback: function () {
-                            if (btn.getSelectedRecord().get('email')) {
-                                window.open('mailto:' + btn.getSelectedRecord().get('email'), '_blank');
+                            if (btn.getSelectedRecord().get('mail')) {
+                                window.open('mailto:' + btn.getSelectedRecord().get('mail'), '_blank');
                             }
                         }
                     })
 
                 } else {
-                    if (btn.getSelectedRecord().get('email')) {
-                        window.open('mailto:' + btn.getSelectedRecord().get('email'), '_blank');
+                    if (btn.getSelectedRecord().get('mail')) {
+                        window.open('mailto:' + btn.getSelectedRecord().get('mail'), '_blank');
                     }
                 }
             }
