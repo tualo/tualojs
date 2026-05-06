@@ -35,6 +35,8 @@ Ext.define('Tualo.project.form.field.Anschprechpartner', {
             cls: 'x-fa fa-envelope',
             tooltip: "E-Mail senden",
             handler: function (btn) {
+                console.log('openmail', 'tualo_job_ansprechpartner', btn.getSelectedRecord().get('mail'));
+                console.log('openmail', 'tualo_job_ansprechpartner this', this.getCurrentRecord());
                 if (btn.getSelectedRecord() == null) {
                     btn.getStore().load({
                         callback: function () {
@@ -47,8 +49,7 @@ Ext.define('Tualo.project.form.field.Anschprechpartner', {
                 } else {
                     if (btn.getSelectedRecord().get('mail')) {
                         window.open('mailto:' + btn.getSelectedRecord().get('mail'), '_blank');
-                        console.log('openmail', 'tualo_job_ansprechpartner', btn.getSelectedRecord().get('mail'));
-                        console.log('openmail', 'tualo_job_ansprechpartner this', this.getCurrentRecord());
+
                     }
                 }
             }
