@@ -21,12 +21,12 @@ Ext.define('Tualo.tualojs.data.calculation.field.ContriMarginPercent', {
     ],
     calculate: function (data) {
         console.log('ContriMarginPercent calculate start', data);
-        var v = (data.netto - data.ekpreis_summe) / data.netto * 100;
+        var v = (data.tualo_calculation_contri_margin / data.netto) * 100;
 
         return v;
     },
     critical: true,
     persist: true,
-    depends: ['ekpreis_summe', 'netto'],
+    depends: ['tualo_calculation_contri_margin', 'netto'],
 });
 
