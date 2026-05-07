@@ -191,3 +191,62 @@ on duplicate key
         isformfield = values(isformfield)
 ;
 
+
+
+
+insert into extjs_base_types (
+        vendor, id, classname, xtype_long_classic,
+        baseclass, xtype_long_modern, name, description,
+        iscolumn,
+        isformfield
+    )
+values
+    (
+        "Tualo",                              
+        "Tualo.tualojs.data.calculation.field.ContriMarginPercent",        
+        "Tualo.tualojs.data.calculation.field.ContriMarginPercent",  
+        "data.field.tualo_calculation_contri_margin_percent",
+        "Ext.form.field.Number",              
+        "data.field.tualo_calculation_contri_margin_percent",          
+        "Tualo.tualojs.data.calculation.field.ContriMarginPercent",  
+        "Report Contri Margin Percent Field",
+        0,
+        0
+    )
+on duplicate key 
+ update classname = values(classname), xtype_long_classic  = values(xtype_long_classic),
+        baseclass  = values(baseclass), xtype_long_modern  = values(xtype_long_modern), name  = values(name), description  = values(description),
+        iscolumn  = values(iscolumn),
+        isformfield = values(isformfield)
+;
+
+
+
+insert into extjs_base_types (
+        vendor, id, classname, xtype_long_classic,
+        baseclass, xtype_long_modern, name, description,
+        iscolumn,
+        isformfield
+    )
+values
+    (
+        "Tualo",                              
+        "Tualo.tualojs.data.calculation.field.ContriMargin",        
+        "Tualo.tualojs.data.calculation.field.ContriMargin",  
+        "data.field.tualo_calculation_contri_margin",
+        "Ext.form.field.Number",              
+        "data.field.tualo_calculation_contri_margin",          
+        "Tualo.tualojs.data.calculation.field.ContriMargin",  
+        "Report Contri Margin Field",
+        0,
+        0
+    )
+on duplicate key 
+ update classname = values(classname), xtype_long_classic  = values(xtype_long_classic),
+        baseclass  = values(baseclass), xtype_long_modern  = values(xtype_long_modern), name  = values(name), description  = values(description),
+        iscolumn  = values(iscolumn),
+        isformfield = values(isformfield)
+;
+
+
+

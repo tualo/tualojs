@@ -13,3 +13,4 @@ Ext.define('Tualo.tualojs.data.calculation.field.NetSimple', {
     persist: true,
     depends: ['einheit_faktor', 'anzahl', 'epreis'],
 });
+
