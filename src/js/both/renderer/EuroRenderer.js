@@ -56,6 +56,7 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     return Ext.util.Format.number(val, '0.000,00/i');
   },
   deValueRenderer5: function (val, meta, rec) {
+    console.log('deValueRenderer5', val, Ext.util.Format.number(val, '0.000,00000/i'));
     return Ext.util.Format.number(val, '0.000,00000/i');
   },
   deNatualRenderer: function (val, meta, rec) {
