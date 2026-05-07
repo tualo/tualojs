@@ -13,4 +13,3 @@ Ext.define('Tualo.tualojs.data.calculation.field.Net', {
     persist: true,
     depends: ['epreis', 'anzahl'],
 });
-
