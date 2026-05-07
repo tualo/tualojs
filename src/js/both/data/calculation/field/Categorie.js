@@ -38,8 +38,8 @@ Ext.define('Tualo.tualojs.data.calculation.field.Categorie', {
                             });
                             return;
                         }
-                        me.lastQuery = data.data[0].categorie;
-                        record.set('categorie', data.data[0].categorie);
+                        me.lastQuery = data.data[0].id;
+                        record.set('categorie', data.data[0].id);
                     };
                     fn();
                 }
