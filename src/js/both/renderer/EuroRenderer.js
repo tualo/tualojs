@@ -55,6 +55,9 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
   deValueRenderer: function (val, meta, rec) {
     return Ext.util.Format.number(val, '0.000,00/i');
   },
+  deValueRenderer5: function (val, meta, rec) {
+    return Ext.util.Format.number(val, '0.000,00000/i');
+  },
   deNatualRenderer: function (val, meta, rec) {
     return Ext.util.Format.number(val, '0.000/i');
   },
@@ -112,6 +115,7 @@ Ext.merge(Ext.util.Format, {
   CSSMetaRenderer: Tualo.tualojs.Format.Renderer.CSSMetaRenderer,
   BackgroundColorMetaRenderer: Tualo.tualojs.Format.Renderer.backgroundColorMetaRenderer,
   deValueRenderer: Tualo.tualojs.Format.Renderer.deValueRenderer,
+  deValueRenderer5: Tualo.tualojs.Format.Renderer.deValueRenderer5,
   deNatualRenderer: Tualo.tualojs.Format.Renderer.deNatualRenderer,
   deDate: Tualo.tualojs.Format.Renderer.deDate,
   deMonth: Tualo.tualojs.Format.Renderer.deMonth,
