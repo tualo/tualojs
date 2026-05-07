@@ -27,6 +27,6 @@ Ext.define('Tualo.tualojs.data.calculation.field.ContriMarginPercent', {
     },
     critical: true,
     persist: true,
-    depends: ['tualo_calculation_contri_margin', 'netto'],
+    depends: ['contrimargin', 'netto'],
 });
 
