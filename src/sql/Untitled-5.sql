@@ -107,3 +107,31 @@ on duplicate key
         iscolumn  = values(iscolumn),
         isformfield = values(isformfield)
 ;
+
+
+
+insert into extjs_base_types (
+        vendor, id, classname, xtype_long_classic,
+        baseclass, xtype_long_modern, name, description,
+        iscolumn,
+        isformfield
+    )
+values
+    (
+        "Tualo",                              
+        "Tualo.tualojs.data.calculation.field.SinglePriceMarkup",        
+        "Tualo.tualojs.data.calculation.field.SinglePriceMarkup",  
+        "data.field.tualo_calculation_single_price_markup",
+        "Ext.form.field.Number",              
+        "data.field.tualo_calculation_single_price_markup",          
+        "Tualo.tualojs.data.calculation.field.SinglePriceMarkup",  
+        "Report Single Price Markup Field",
+        0,
+        0
+    )
+on duplicate key 
+ update classname = values(classname), xtype_long_classic  = values(xtype_long_classic),
+        baseclass  = values(baseclass), xtype_long_modern  = values(xtype_long_modern), name  = values(name), description  = values(description),
+        iscolumn  = values(iscolumn),
+        isformfield = values(isformfield)
+;
