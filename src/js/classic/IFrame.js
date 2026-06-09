@@ -6,7 +6,20 @@ Ext.define('Tualo.tualojs.IFrame', {
 
     loadMask: 'Loading...',
 
-    src: 'about:blank',
+    config: {
+        src: 'about:blank',
+    },
+
+    updateSrc: function (src) {
+        this.load(src);
+    },
+    applySrc: function (src, oldSrc) {
+        if (src !== oldSrc) {
+            this.load(src);
+        }
+        return src;
+    },
+
 
     renderTpl: [
         // '<iframe src="{src}" id="{id}-iframeEl" data-ref="iframeEl" name="{frameName}" width="100%" height="100%" frameborder="0" sandbox="allow-scripts"></iframe>'
