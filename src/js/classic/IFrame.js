@@ -6,6 +6,9 @@ Ext.define('Tualo.tualojs.IFrame', {
 
     loadMask: 'Loading...',
 
+
+    src: 'about:blank',
+    /*
     config: {
         src: 'about:blank',
     },
@@ -19,6 +22,7 @@ Ext.define('Tualo.tualojs.IFrame', {
         }
         return src;
     },
+    */
 
 
     renderTpl: [
