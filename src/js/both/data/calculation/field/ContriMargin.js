@@ -13,6 +13,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.ContriMargin', {
     persist: true,
     depends: ['ekpreis_summe', 'netto'],
 });
+
 Ext.define('Tualo.tualojs.data.calculation.field.ContriMarginPercent', {
 
     extend: 'Ext.data.field.Number',
