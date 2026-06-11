@@ -7,7 +7,10 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
     ],
     convert: function (value, record) {
 
-        if (value !== record.get('listenpreis_vk')) return record.get('listenpreis_vk');
+        if (value !== record.get('listenpreis_vk')) {
+            if (record.get('listenpreis_vk') == 0) return value;
+            return record.get('listenpreis_vk');
+        }
 
         return value;
     },
