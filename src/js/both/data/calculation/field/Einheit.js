@@ -37,6 +37,10 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
                             });
                             return;
                         }
+                        if (!data.data || data.data.length == 0) {
+
+                            return;
+                        }
                         me.lastQuery = record.get('artikel');
                         record.set('einheit', data.data[0].einheit);
                     };
