@@ -8,7 +8,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.EinheitFaktor', {
         let me = this;
         let doQuery = true;
 
-        console.log('***EinheitFaktor convert start', record);
+        console.log('***EinheitFaktor convert start', currentValue, record);
         if (me.lastQuery != record.get('einheit'))
             if (!Ext.isEmpty(record.get('einheit'))) {
                 if (typeof record.modified == 'undefined') return currentValue;

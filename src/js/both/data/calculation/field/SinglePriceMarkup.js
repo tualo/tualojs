@@ -6,6 +6,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.SinglePriceMarkup', {
     calculate: function (data) {
         console.log('SinglePriceMarkup calculate start', data);
         var v = data.ekpreis * data.einheit_faktor;
+
         if (data.markup) {
             v += data.markup;
         }
