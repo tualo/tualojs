@@ -9,7 +9,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
         let doQuery = true;
 
         console.log('Einheit convert start', record);
-        if (me.lastQuery != currentValue)
+        if (me.lastQuery != record.get('artikel'))
             if (!Ext.isEmpty(record.get('artikel'))) {
                 if (typeof record.modified == 'undefined') return currentValue;
                 if (record.modified) {
@@ -37,7 +37,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
                             });
                             return;
                         }
-                        me.lastQuery = data.data[0].einheit;
+                        me.lastQuery = record.get('artikel');
                         record.set('einheit', data.data[0].einheit);
                     };
                     fn();
