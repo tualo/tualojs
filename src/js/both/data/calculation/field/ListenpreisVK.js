@@ -15,16 +15,19 @@ Ext.define('Tualo.tualojs.data.calculation.field.ListenpreisVK', {
             if (!Ext.isEmpty(record.get('artikel'))) {
                 if (typeof record.modified == 'undefined') return currentValue;
                 if (record.modified) {
+
                     let artikel = record.get('artikel');
+                    let postData = {
+                        header: {},
+                        position: record.getData({ serialize: true })
+                    }
                     let fn = async () => {
                         let request = await fetch('./dr/calculation/listenpreis_vk', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
                             },
-                            body: JSON.stringify({
-                                artikel: artikel
-                            })
+                            body: JSON.stringify(postData)
                         });
                         if (!request.ok) {
                             Ext.toast({
