@@ -12,6 +12,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
         if (Ext.isEmpty(currentValue)) {
 
 
+            if (Ext.isEmpty(record.get('beleg'))) return currentValue;
             let fn = async () => {
 
                 let postData = {
