@@ -13,6 +13,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
 
 
             if (Ext.isEmpty(record.get('beleg'))) return currentValue;
+
             let fn = async () => {
 
                 let postData = {
@@ -29,7 +30,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
                 });
                 if (!request.ok) {
                     Ext.toast({
-                        html: 'Fehler beim Abrufen ' + artikel + ' Daten',
+                        html: 'Fehler beim Abrufen der VDatum-Daten',
                         title: 'Fehler',
                         width: 200,
                         align: 't'
