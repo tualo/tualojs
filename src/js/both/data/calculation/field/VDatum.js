@@ -13,6 +13,12 @@ Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
 
 
             let fn = async () => {
+
+                let postData = {
+                    header: {},
+                    position: record.getData({ serialize: true })
+                }
+
                 let request = await fetch('./dr/calculation/vdatum', {
                     method: 'POST',
                     headers: {
