@@ -47,7 +47,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
                     });
                     return;
                 }
-                me.lastQuery = artikel;
+                // me.lastQuery = artikel;
 
 
                 record.set('vdatum', responseData.value);
