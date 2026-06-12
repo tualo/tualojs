@@ -1,0 +1,59 @@
+
+
+Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
+    extend: 'Ext.data.field.Number',
+    alias: [
+        'data.field.tualo_calculation_vdatum'
+    ],
+    lastQuery: null,
+    convert: function (currentValue, record) {
+        let me = this;
+        let doQuery = true;
+        if (Ext.isEmpty(currentValue)) {
+
+
+            let fn = async () => {
+                let request = await fetch('./dr/calculation/vdatum', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(postData)
+                });
+                if (!request.ok) {
+                    Ext.toast({
+                        html: 'Fehler beim Abrufen ' + artikel + ' Daten',
+                        title: 'Fehler',
+                        width: 200,
+                        align: 't'
+                    });
+                    return;
+                }
+                let responseData = await request.json();
+                if (!responseData.success) {
+                    let msg = responseData.msg;
+                    if (!msg) msg = "Leider ist ein unbekannter Fehler aufgetreten.";
+                    Ext.toast({
+                        html: msg,
+                        title: 'Fehler',
+                        width: 200,
+                        align: 't'
+                    });
+                    return;
+                }
+                me.lastQuery = artikel;
+
+
+                record.set('vdatum', responseData.value);
+            };
+            fn();
+            return new Date();
+
+        }
+        return currentValue;
+    },
+    critical: true,
+    persist: true,
+    depends: ['artikel'],
+});
+
