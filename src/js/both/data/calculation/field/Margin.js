@@ -8,7 +8,15 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
     convert: function (value, record) {
 
         if (value !== record.get('listenpreis_vk')) {
-            if (record.get('listenpreis_vk') == 0) return value;
+            if (record.get('listenpreis_vk') == 0) {
+                if (record.get('ekpreis') != 0 && record.get('markup_percent') != 0) {
+                    var v = parseFloat(data.ekpreis) * parseFloat(data.einheit_faktor);
+                    v = v * (parseFloat(data.markup_percent) / 100);
+                    return v;
+                } else {
+                    return value;
+                }
+            }
             return record.get('listenpreis_vk');
         }
 
@@ -16,5 +24,5 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
     },
     critical: true,
     persist: true,
-    depends: ['listenpreis_vk'],
+    depends: ['listenpreis_vk', 'ekpreis'],
 });

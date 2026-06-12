@@ -11,9 +11,10 @@ Ext.define('Tualo.tualojs.data.calculation.field.SinglePriceMarkup', {
             v += parseFloat(data.markup);
         }
 
+        /*
         if (data.markup_percent) {
             v += v * (parseFloat(data.markup_percent) / 100);
-        }
+        }*/
         return v;
     },
     critical: true,
