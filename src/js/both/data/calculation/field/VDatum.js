@@ -1,11 +1,14 @@
 
 
 Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
-    extend: 'Ext.data.field.Number',
+    extend: 'Ext.data.field.Date',
     alias: [
         'data.field.tualo_calculation_vdatum'
     ],
     lastQuery: null,
+    dateReadFormat: 'Y-m-d',
+    dateWriteFormat: 'Y-m-d',
+
     convert: function (currentValue, record) {
         let me = this;
         let doQuery = true;
@@ -62,6 +65,6 @@ Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
     },
     critical: true,
     persist: true,
-    depends: ['artikel'],
+    depends: ['__id'],
 });
 
