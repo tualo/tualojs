@@ -20,6 +20,12 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
             return record.get('listenpreis_vk');
         }
 
+        if (record.get('ekpreis') != 0 && record.get('markup_percent') != 0) {
+            var v = parseFloat(data.ekpreis) * parseFloat(data.einheit_faktor);
+            v = v * (parseFloat(data.markup_percent) / 100);
+            return v;
+        }
+
         return value;
     },
     critical: true,
