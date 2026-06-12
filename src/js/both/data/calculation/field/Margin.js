@@ -6,7 +6,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
         'data.field.tualo_calculation_margin'
     ],
     convert: function (value, record) {
-
+        console.log('MARKUP berechnung ggf. noch nicht sauber!!!!!', record);
         if (value !== record.get('listenpreis_vk')) {
             if (record.get('listenpreis_vk') == 0) {
                 if (record.get('ekpreis') != 0 && record.get('markup_percent') != 0) {
