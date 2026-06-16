@@ -1,7 +1,7 @@
 
 Ext.define('Tualo.Ext.form.field.Text', {
     override: 'Ext.form.field.Text',
-    onAfterRender: function () {
+    afterRender: function () {
         var me = this;
         me.callParent(arguments);
 
