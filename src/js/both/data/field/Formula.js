@@ -13,6 +13,7 @@ Ext.define('Tualo.tualojs.data.field.Formula', {
 
     convert: function (currentValue, record) {
         let me = this;
+
         if (typeof me._math === 'undefined') {
             me._math = new Tualo.tualojs.Math();
         }

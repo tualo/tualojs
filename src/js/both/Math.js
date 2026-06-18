@@ -15,7 +15,30 @@ Ext.define('Tualo.tualojs.Math', {
         let me = this,
             fields = record.getFields();
         fields.forEach((field, index) => {
-            me.context().def(field.name, record.get(field.name));
+            let value = record.get(field.name);
+            if (typeof value == 'number') {
+                me.context().def(field.name, value);
+            } else if (typeof value == 'string') {
+                let num = parseFloat(value);
+                if (!isNaN(num)) {
+                    me.context().def(field.name, num);
+                }
+            } else if (typeof value == 'boolean') {
+                me.context().def(field.name, value ? 1 : 0);
+            } else if (value instanceof Date) {
+                me.context().def(field.name, value.getTime());
+            } else {
+                let fn = () => {
+                    Ext.toast({
+                        html: `Unsupported field type for formula: ${field.name} (${typeof value})`,
+                        title: 'Fehler',
+                        align: 't',
+                        iconCls: 'fa fa-warning'
+                    });
+                }
+                me.context().def(field.name, fn);
+            }
+            // me.context().def(field.name, record.get(field.name));
         });
     },
 
