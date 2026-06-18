@@ -11,11 +11,12 @@ Ext.define('Tualo.tualojs.Math', {
         return me._context;
     },
 
-    addRecord: function (record) {
+    addRecord: function (record, filterFn = () => true) {
         let me = this,
             fields = record.getFields();
         fields.forEach((field, index) => {
             let value = record.get(field.name);
+            if (!filterFn(field, value)) return;
             if (typeof value == 'number') {
                 me.context().def(field.name, value);
             } else if (typeof value == 'string') {
