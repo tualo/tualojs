@@ -56,6 +56,17 @@ Ext.define('Tualo.tualojs.Math', {
 
     getContext: function () {
         var ctx = new Tualo.tualojs.Shunt.Context();
+        ctx.def('PI', Math.PI);
+        ctx.def('E', Math.E);
+        ctx.def('LN2', Math.LN2);
+        ctx.def('round', Math.round);
+        ctx.def('floor', Math.floor);
+        ctx.def('ceil', Math.ceil);
+        ctx.def('abs', Math.abs);
+        ctx.def('sqrt', Math.sqrt);
+        ctx.def('pow', Math.pow);
+        ctx.def('max', Math.max);
+        ctx.def('min', Math.min);
         return ctx;
     },
 
