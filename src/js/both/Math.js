@@ -17,6 +17,11 @@ Ext.define('Tualo.tualojs.Math', {
         fields.forEach((field, index) => {
             let value = record.get(field.name);
             if (!filterFn(field, value)) return;
+
+            if (value === null || typeof value === 'undefined')
+                return;
+
+
             if (typeof value == 'number') {
                 me.context().def(field.name, value);
             } else if (typeof value == 'string') {
