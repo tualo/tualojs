@@ -12,7 +12,7 @@ Ext.define('Tualo.grid.features.CheckedFixedSummary', {
      */
     dock: undefined,
 
-    'rendererFieldName': 'summaryRenderer',
+    'rendererFieldName': 'fixedSummaryRenderer',
     'summaryTypeFieldName': 'fixedSummaryType',
 
     'checkedFieldName': 'none',
