@@ -19,6 +19,8 @@ Ext.define('Tualo.tualojs.data.field.Formula', {
         }
         me._math.addRecord(record);
         try {
+            if (typeof record.isNonData === 'boolean' && record.isNonData === true) return currentValue;
+            if (Ext.isEmpty(record.get('formel'))) return currentValue;
             return me._math.parse(record.get('formel'));
         } catch (e) {
             console.error(e);
