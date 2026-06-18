@@ -346,12 +346,12 @@ insert into extjs_base_types (
 values
     (
         "Tualo",                              
-        "Tualo.tualojs.data.calculation.field.Formula",        
-        "Tualo.tualojs.data.calculation.field.Formula",  
+        "Tualo.tualojs.data.field.Formula",        
+        "Tualo.tualojs.data.field.Formula",  
         "data.field.tualo_calculation_formula",
         "Ext.form.field.Number",              
         "data.field.tualo_calculation_formula",          
-        "Tualo.tualojs.data.calculation.field.Formula",  
+        "Tualo.tualojs.data.field.Formula",  
         "Formula Field",
         0,
         0

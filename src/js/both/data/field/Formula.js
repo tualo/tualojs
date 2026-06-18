@@ -1,4 +1,4 @@
-Ext.define('Tualo.report.data.field.Formula', {
+Ext.define('Tualo.tualojs.data.field.Formula', {
     extend: 'Ext.data.field.Number',
     alias: [
         'data.field.tualo_amount_formula'
