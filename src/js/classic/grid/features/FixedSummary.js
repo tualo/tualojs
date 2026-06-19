@@ -112,7 +112,6 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         return this.sum(recs, field) / recs.length;
     },
     getSummary: function (store, type, field, group) {
-        console.log('getSummary', store, type, field, group);
         if (type) {
             if (this.onlySelected === true) {
 
