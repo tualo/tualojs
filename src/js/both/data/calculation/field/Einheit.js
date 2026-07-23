@@ -38,7 +38,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
             return -1;
         }
         return this.units[rawRecord.artikel] || 1;
-    }
+    },
     /*
     convert: function (currentValue, record) {
         let me = this;
@@ -85,8 +85,8 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
             }
         return currentValue;
     },
-    */^
-        critical: true,
+    */
+    critical: true,
     persist: true,
     depends: ['artikel'],
 });
