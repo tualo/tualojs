@@ -29,7 +29,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
     convert: function (value, record) {
         console.log('MARKUP berechnung ggf. noch nicht sauber!!!!!', record);
         if (record.get('edit_markup')) {
-            return record.get('markup');
+            return value;
         }
         if (value !== record.get('listenpreis_vk')) {
             if (record.get('listenpreis_vk') == 0) {
