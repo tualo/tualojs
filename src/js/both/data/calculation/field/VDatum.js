@@ -60,10 +60,10 @@ Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
                 record.set('vdatum', responseData.value);
             };
             fn();
-            return new Date();
+            return Ext.util.Format.date(new Date(), 'Y-m-d');
 
         }
-        return currentValue;
+        return Ext.util.Format.date(currentValue, 'Y-m-d');
     },
     critical: true,
     persist: true,
