@@ -5,6 +5,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
     alias: [
         'data.field.tualo_calculation_margin'
     ],
+    /*
     calculate: function (data) {
         console.log('Margin calculate start', data);
         if (data.edit_markup) {
@@ -22,11 +23,14 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
                 return 0;
             }
         }
-    },
+    },*/
 
-    /*
+
     convert: function (value, record) {
         console.log('MARKUP berechnung ggf. noch nicht sauber!!!!!', record);
+        if (record.get('edit_markup')) {
+            return record.get('markup');
+        }
         if (value !== record.get('listenpreis_vk')) {
             if (record.get('listenpreis_vk') == 0) {
                 if (record.get('ekpreis') != 0 && record.get('markup_percent') != 0) {
@@ -47,7 +51,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
         }
 
         return value;
-    },*/
+    },
     critical: true,
     persist: true,
     depends: ['listenpreis_vk', 'ekpreis', 'markup_percent'],
