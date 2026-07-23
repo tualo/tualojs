@@ -6,6 +6,40 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
         'data.field.tualo_calculation_einheit'
     ],
     lastQuery: null,
+
+    constructor: function (config) {
+        this.callParent([config]);
+        this.gatherData();
+    },
+    gatherData: async function (record) {
+        let request = await fetch('./ds/view_artikelgruppen_einheit/read?limit=10000');
+        let data = await request.json();
+        if (!data.success) {
+            let msg = data.msg;
+            if (!msg) msg = "Leider ist ein unbekannter Fehler aufgetreten.";
+            Ext.toast({
+                html: msg,
+                title: 'Fehler',
+                width: 200,
+                align: 't'
+            });
+            return;
+        }
+        if (!data.data || data.data.length == 0) {
+            return;
+        }
+        this.units = {};
+        for (let i = 0; i < data.data.length; i++) {
+            this.units[data.data[i].gruppen_id] = data.data[i].einheit;
+        }
+    },
+    calculate: function (rawRecord) {
+        if (typeof this.units == 'undefined') {
+            return -1;
+        }
+        return this.units[rawRecord.artikel] || 1;
+    }
+    /*
     convert: function (currentValue, record) {
         let me = this;
         let doQuery = true;
@@ -51,7 +85,8 @@ Ext.define('Tualo.tualojs.data.calculation.field.Einheit', {
             }
         return currentValue;
     },
-    critical: true,
+    */^
+        critical: true,
     persist: true,
     depends: ['artikel'],
 });
