@@ -6,6 +6,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
         'data.field.tualo_calculation_margin'
     ],
     calculate: function (data) {
+        console.log('Margin calculate start', data);
         if (data.edit_markup == 1) {
             return data.markup;
         } else {
