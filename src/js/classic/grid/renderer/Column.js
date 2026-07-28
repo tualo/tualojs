@@ -1,3 +1,4 @@
+/*
 Ext.define('Tualo.override.grid.column.Column', {
     override: 'Ext.grid.column.Column',
 
@@ -19,4 +20,4 @@ Ext.define('Tualo.override.grid.column.Column', {
             return Ext.callback(renderer, me.rendererScope, arguments, 0, me);
         }
     },
-});
+});*/
