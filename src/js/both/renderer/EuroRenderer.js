@@ -161,5 +161,6 @@ Ext.merge(Ext.util.Format, {
   colorRenderer: Tualo.tualojs.Format.Renderer.colorRenderer,
   pureValueRenderer: Tualo.tualojs.Format.Renderer.pureValueRenderer,
   dePerMilleRenderer: Tualo.tualojs.Format.Renderer.dePerMilleRenderer,
-  fullPercentRenderer: Tualo.tualojs.Format.Renderer.fullPercentRenderer
+  fullPercentRenderer: Tualo.tualojs.Format.Renderer.fullPercentRenderer,
+  markup_percent: Tualo.tualojs.Format.Renderer.markup_percent
 });
