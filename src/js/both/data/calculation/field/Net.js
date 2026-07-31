@@ -5,7 +5,11 @@ Ext.define('Tualo.tualojs.data.calculation.field.Net', {
     ],
     calculate: function (data) {
         console.log('Net calculate start', data);
-        var v = data.anzahl * data.epreis + data.zuschlag;
+        var v = data.anzahl * data.epreis; // + data.zuschlag;
+
+        if (data.zuschlag) {
+            v = v + (v * data.zuschlag / 100);
+        }
 
         return v;
     },
