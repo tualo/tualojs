@@ -36,3 +36,4 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
     persist: true,
     depends: ['listenpreis_vk', 'ekpreis', 'markup_percent'],
 });
+
