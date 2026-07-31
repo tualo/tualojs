@@ -136,7 +136,7 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     }catch(e){
       console.error(e);
     }
-    return Ext.util.Format.number(val * 100, '0,000.0 %');
+    return Ext.util.Format.number(val , '0,000.0 %');
 
   }
 });
