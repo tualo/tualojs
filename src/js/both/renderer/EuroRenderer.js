@@ -25,6 +25,14 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     if (value === null || value === undefined) return '';
     return Ext.util.Format.number(value * 100, '0,000 %');
   },
+  dePerMilleRenderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
+    if (value === null || value === undefined) return '';
+    return Ext.util.Format.number(value * 1000, '0,000 ‰');
+  },
+  fullPercentRenderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
+    if (value === null || value === undefined) return '';
+    return Ext.util.Format.number(value , '0,00 %');
+  },
   CSSMetaRenderer: function (val, meta, rec) {
     try {
       var key = 'cssstyle';
@@ -130,5 +138,7 @@ Ext.merge(Ext.util.Format, {
   deTime: Tualo.tualojs.Format.Renderer.deTime,
   checkRenderer: Tualo.tualojs.Format.Renderer.checkRenderer,
   colorRenderer: Tualo.tualojs.Format.Renderer.colorRenderer,
-  pureValueRenderer: Tualo.tualojs.Format.Renderer.pureValueRenderer
+  pureValueRenderer: Tualo.tualojs.Format.Renderer.pureValueRenderer,
+  dePerMilleRenderer: Tualo.tualojs.Format.Renderer.dePerMilleRenderer,
+  fullPercentRenderer: Tualo.tualojs.Format.Renderer.fullPercentRenderer
 });
