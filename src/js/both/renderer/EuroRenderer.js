@@ -120,16 +120,20 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     console.log('rendering markup_percent', arguments);
     if (val === null || val === undefined) return '';
 
-    if (!Ext.isEmpty(rec.get('edit_markup')) && rec.get('edit_markup') == true) {
+    try{
+      if (!Ext.isEmpty(rec.get('edit_markup')) && rec.get('edit_markup') == true) {
 
-      var alt = parseFloat(rec.get('ekpreis')) * parseFloat(rec.get('einheit_faktor'));
-      var neu = alt + parseFloat(rec.get('_markup'));
-      if (alt == 0){
-        val = 0;
+        var alt = parseFloat(rec.get('ekpreis')) * parseFloat(rec.get('einheit_faktor'));
+        var neu = alt + parseFloat(rec.get('markup'));
+        if (alt == 0){
+          val = 0;
+        }
+        val = (neu - alt) / alt * 100;
+
+
       }
-      val = (neu - alt) / alt * 100;
-
-
+    }catch(e){
+      console.error(e);
     }
     return Ext.util.Format.number(val * 100, '0,000.0 %');
 
