@@ -121,16 +121,17 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     if (val === null || val === undefined) return '';
 
     try{
-      if (!Ext.isEmpty(rec.get('edit_markup')) && rec.get('edit_markup') == true) {
+      if (typeof rec != 'undefined'  ) {
+        if (!Ext.isEmpty(rec.get('edit_markup')) && rec.get('edit_markup') == true) {
 
-        var alt = parseFloat(rec.get('ekpreis')) * parseFloat(rec.get('einheit_faktor'));
-        var neu = alt + parseFloat(rec.get('markup'));
-        if (alt == 0){
-          val = 0;
+          var alt = parseFloat(rec.get('ekpreis')) * parseFloat(rec.get('einheit_faktor'));
+          var neu = alt + parseFloat(rec.get('markup'));
+          if (alt == 0){
+            val = 0;
+          }
+          val = (neu - alt) / alt * 100;
+
         }
-        val = (neu - alt) / alt * 100;
-
-
       }
     }catch(e){
       console.error(e);
