@@ -80,6 +80,33 @@ Ext.define('Tualo.tualojs.Math', {
         ctx.def('if', function (condition, trueValue, falseValue) {
             return condition ? trueValue : falseValue;
         });
+        ctx.def('lt', function (value, decimals) {
+            return value < decimals;
+        });
+        ctx.def('lte', function (value, decimals) {
+            return value <= decimals;
+        });
+        ctx.def('gt', function (value, decimals) {
+            return value > decimals;
+        });
+        ctx.def('gte', function (value, decimals) {
+            return value >= decimals;
+        });
+        ctx.def('eq', function (value, decimals) {
+            return value == decimals;
+        });
+        ctx.def('neq', function (value, decimals) {
+            return value != decimals;
+        });
+        ctx.def('and', function (a, b) {
+            return a && b;
+        });
+        ctx.def('or', function (a, b) {
+            return a || b;
+        });
+        ctx.def('not', function (a) {
+            return !a;
+        });
         return ctx;
     },
 
