@@ -67,8 +67,27 @@ Ext.define('Tualo.tualojs.Math', {
         ctx.def('pow', Math.pow);
         ctx.def('max', Math.max);
         ctx.def('min', Math.min);
+        ctx.def('sin', Math.sin);
+        ctx.def('cos', Math.cos);
+        ctx.def('tan', Math.tan);
+        ctx.def('asin', Math.asin);
+        ctx.def('acos', Math.acos);
+        ctx.def('atan', Math.atan);
+        ctx.def('atan2', Math.atan2);
+        ctx.def('log', Math.log);
+        ctx.def('exp', Math.exp);
+        ctx.def('random', Math.random);
+        ctx.def('if', function (condition, trueValue, falseValue) {
+            return condition ? trueValue : falseValue;
+        });
         return ctx;
     },
+
+    contextFN: {
+        if: function (condition, trueValue, falseValue) {
+            return condition ? trueValue : falseValue;
+        }
+    }
 
 
 })
