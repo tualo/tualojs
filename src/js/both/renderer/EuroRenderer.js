@@ -113,7 +113,7 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
 
   stripedHtml300: function (val, meta, rec) {
     let doc = new DOMParser().parseFromString(val, 'text/html');
-    return doc.body.textContent.substring(0, 300) || "";
+    return doc.body.textContent.substring(0, 300).trim() || "";
 
   },
 
