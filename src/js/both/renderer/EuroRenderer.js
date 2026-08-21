@@ -31,7 +31,7 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
   },
   fullPercentRenderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
     if (value === null || value === undefined) return '';
-    return Ext.util.Format.number(value , '0,00 %');
+    return Ext.util.Format.number(value, '0,00 %');
   },
   CSSMetaRenderer: function (val, meta, rec) {
     try {
@@ -109,6 +109,14 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     return val;
 
   },
+
+
+  stripedHtml300: function (val, meta, rec) {
+    let doc = new DOMParser().parseFromString(val, 'text/html');
+    return doc.body.textContent.substring(0, 300) || "";
+
+  },
+
   pureValueRenderer: function (val, meta, rec) {
     return val;
   },
@@ -119,23 +127,23 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     console.log('rendering markup_percent', arguments);
     if (val === null || val === undefined) return '';
 
-    try{
-      if (typeof rec != 'undefined'  ) {
+    try {
+      if (typeof rec != 'undefined') {
         if (!Ext.isEmpty(rec.get('edit_markup')) && rec.get('edit_markup') == true) {
 
           var alt = parseFloat(rec.get('ekpreis')) * parseFloat(rec.get('einheit_faktor'));
           var neu = alt + parseFloat(rec.get('markup'));
-          if (alt == 0){
+          if (alt == 0) {
             val = 0;
           }
           val = (neu - alt) / alt * 100;
 
         }
       }
-    }catch(e){
+    } catch (e) {
       console.error(e);
     }
-    return Ext.util.Format.number(val , '0,000.0 %');
+    return Ext.util.Format.number(val, '0,000.0 %');
 
   }
 });
@@ -166,5 +174,6 @@ Ext.merge(Ext.util.Format, {
   pureValueRenderer: Tualo.tualojs.Format.Renderer.pureValueRenderer,
   dePerMilleRenderer: Tualo.tualojs.Format.Renderer.dePerMilleRenderer,
   fullPercentRenderer: Tualo.tualojs.Format.Renderer.fullPercentRenderer,
-  markup_percent: Tualo.tualojs.Format.Renderer.markup_percent
+  markup_percent: Tualo.tualojs.Format.Renderer.markup_percent,
+  stripedHtml300: Tualo.tualojs.Format.Renderer.stripedHtml300
 });
