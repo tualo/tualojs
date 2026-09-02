@@ -2209,3 +2209,27 @@ values
     vendor =
 values
     (vendor);
+
+
+
+INSERT IGNORE INTO `custom_types`  
+(
+        id,
+        xtype_long_classic,
+        xtype_long_modern,
+        extendsxtype_classic,
+        extendsxtype_modern,
+        name,
+        vendor,
+        description
+) VALUES
+(
+    'Tualo.tualojs.data.field.RowColorLogic',
+    'data.field.tualo_row_color_logic',
+    'data.field.tualo_row_color_logic',
+    'Ext.data.field.String',
+    'Ext.data.field.String',
+    'Tualo.tualojs.data.field.RowColorLogic',
+    'Tualo',
+    ''
+);
