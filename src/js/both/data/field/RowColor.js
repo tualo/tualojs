@@ -7,7 +7,7 @@ Ext.define('Tualo.tualojs.data.field.RowColorLogic', {
     persist: false,
     queriedList: {},
     calculate: function (data) {
-
-        return '.row-color-cobaltgreen';
+        console.log('tualo_row_color_logic', data);
+        return 'row-color-cobaltgreen_test';
     }
 });
