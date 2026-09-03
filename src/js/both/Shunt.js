@@ -50,6 +50,7 @@ Ext.define('Tualo.tualojs.Shunt', {
         // tokens
         var T_NUMBER = 1,  // number
             T_IDENT = 2,  // ident (constant)
+            T_STRING = 3,  // string literal
             T_FUNCTION = 4,  // function
             T_POPEN = 8,  // (
             T_PCLOSE = 16, // )
@@ -64,7 +65,8 @@ Ext.define('Tualo.tualojs.Shunt', {
             T_UNARY_PLUS = 71, // unary +
             T_UNARY_MINUS = 72, // unary -
             T_NOT = 73, // unary ! (convert (n > 0 || n < 0) to 0 and 0 to 1)
-            T_SQRT = 74; // unary √
+            T_SQRT = 74, // unary √
+            T_EQUAL = 75; // ==
 
         // ----------------------------------------
         // token
@@ -151,6 +153,7 @@ Ext.define('Tualo.tualojs.Shunt', {
             },
 
             def: function def(name, value) {
+                // console.log('defining', name, value);
                 if (typeof value === 'undefined' && typeof Math[name] === 'function')
                     value = Math[name].bind(Math);
 
@@ -171,7 +174,7 @@ Ext.define('Tualo.tualojs.Shunt', {
 
         // ----------------------------------------
         // scanner
-        var RE_PATTERN = /^([√!,\+\-\*\/\^%\(\)]|(?:\d*\.\d+|\d+\.\d*|\d+)(?:[eE][+-]?\d+)?|[a-z_A-Zπ]+[a-z_A-Z0-9]*|[ \t]+)/;
+        var RE_PATTERN = /^(==|[√!,\+\-\*\/\^%\(\)]|(?:\d*\.\d+|\d+\.\d*|\d+)(?:[eE][+-]?\d+)?|'(?:\\.|[^'\\])*'|"(?:\\.|[^"\\])*"|[a-z_A-Zπ]+[a-z_A-Z0-9]*|[ \t]+)/;
 
         function Scanner(term) {
             this.tokens = new Stack;
@@ -181,7 +184,7 @@ Ext.define('Tualo.tualojs.Shunt', {
 
             while (term.length) {
                 if (!(match = term.match(RE_PATTERN)))
-                    throw new Error('syntax error: near `' + term.substr(0, 10) + '``');
+                    throw new Error('syntax error: near `' + term.substr(0, 10) + '`');
 
                 if ((token = match[1]).length === 0)
                     throw new Error('syntax error: empty token matched. abort');
@@ -193,6 +196,10 @@ Ext.define('Tualo.tualojs.Shunt', {
 
                 if (!isNaN(token)) {
                     this.tokens.push(prev = new Token(parseFloat(token), T_NUMBER));
+                    continue;
+                }
+                if (token[0] === "'" || token[0] === '"') {
+                    this.tokens.push(prev = new Token(token.slice(1, -1).replace(/\\(.)/g, '$1'), T_STRING));
                     continue;
                 }
                 var found = false;
@@ -241,6 +248,7 @@ Ext.define('Tualo.tualojs.Shunt', {
                 '/': T_DIV,
                 '%': T_MOD,
                 '^': T_POW,
+                '==': T_EQUAL,
                 '(': T_POPEN,
                 ')': T_PCLOSE,
                 ',': T_COMMA,
@@ -296,6 +304,7 @@ Ext.define('Tualo.tualojs.Shunt', {
                     switch (token.type) {
                         case T_NUMBER:
                         case T_IDENT:
+                        case T_STRING:
                             // evaluate constant
                             if (token.type === T_IDENT)
                                 token = new Token(ctx.cs(token.value), T_NUMBER);
@@ -316,6 +325,7 @@ Ext.define('Tualo.tualojs.Shunt', {
                         case T_POW:
                         case T_NOT:
                         case T_SQRT:
+                        case T_EQUAL:
                             // It is known a priori that the operator takes n arguments.
                             var argc = this.argc(token);
 
@@ -389,6 +399,9 @@ Ext.define('Tualo.tualojs.Shunt', {
 
                         case T_POW:
                             return Math.pow(lhs.value, rhs.value);
+
+                        case T_EQUAL:
+                            return lhs.value === rhs.value;
                     }
 
                     // throw?
@@ -421,6 +434,7 @@ Ext.define('Tualo.tualojs.Shunt', {
                     case T_DIV:
                     case T_MOD:
                     case T_POW:
+                    case T_EQUAL:
                         return 2;
                 }
 
@@ -454,6 +468,7 @@ Ext.define('Tualo.tualojs.Shunt', {
                 switch (token.type) {
                     case T_NUMBER:
                     case T_IDENT:
+                    case T_STRING:
                         // If the token is a number (identifier), then add it to the output queue.
                         this.queue.push(token);
                         break;
@@ -498,6 +513,7 @@ Ext.define('Tualo.tualojs.Shunt', {
                     case T_POW:
                     case T_NOT:
                     case T_SQRT:
+                    case T_EQUAL:
                         var token2;
 
                         both: while ((token2 = this.stack.last()) !== undefined) {
@@ -521,6 +537,7 @@ Ext.define('Tualo.tualojs.Shunt', {
                                 case T_POW:
                                 case T_NOT:
                                 case T_SQRT:
+                                case T_EQUAL:
                                     var p1 = this.preced(token),
                                         p2 = this.preced(token2);
 
@@ -609,6 +626,9 @@ Ext.define('Tualo.tualojs.Shunt', {
                     case T_DIV:
                     case T_MOD:
                         return 2;
+
+                    case T_EQUAL:
+                        return 1;
 
                     case T_PLUS:
                     case T_MINUS:

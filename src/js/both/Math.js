@@ -11,11 +11,45 @@ Ext.define('Tualo.tualojs.Math', {
         return me._context;
     },
 
+    addObject: function (dataObject, filterFn = () => true) {
+        let me = this;
+
+        dataObject && Object.keys(dataObject).forEach(key => {
+            let value = dataObject[key];
+            if (!filterFn(key, value)) return;
+
+            if (value === null || typeof value === 'undefined')
+                return;
+
+            if (typeof value == 'number') {
+                me.context().def(key, value);
+            } else if (typeof value == 'string') {
+                me.context().def(key, value);
+            } else if (typeof value == 'boolean') {
+                me.context().def(key, value ? 1 : 0);
+            } else if (value instanceof Date) {
+                me.context().def(key, value.getTime());
+            } else {
+                let fn = () => {
+                    Ext.toast({
+                        html: `Unsupported field type for formula: ${key} (${typeof value})`,
+                        title: 'Fehler',
+                        align: 't',
+                        iconCls: 'fa fa-warning'
+                    });
+                }
+                me.context().def(key, fn);
+            }
+        });
+
+    },
     addRecord: function (record, filterFn = () => true) {
         let me = this,
             fields = record.getFields();
         fields.forEach((field, index) => {
             let value = record.get(field.name);
+
+
             if (!filterFn(field, value)) return;
 
             if (value === null || typeof value === 'undefined')
@@ -25,10 +59,11 @@ Ext.define('Tualo.tualojs.Math', {
             if (typeof value == 'number') {
                 me.context().def(field.name, value);
             } else if (typeof value == 'string') {
-                let num = parseFloat(value);
-                if (!isNaN(num)) {
-                    me.context().def(field.name, num);
-                }
+                //let num = parseFloat(value);
+                //if (!isNaN(num)) {
+
+                me.context().def(field.name, value);
+                //}
             } else if (typeof value == 'boolean') {
                 me.context().def(field.name, value ? 1 : 0);
             } else if (value instanceof Date) {
