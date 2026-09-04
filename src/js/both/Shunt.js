@@ -66,7 +66,11 @@ Ext.define('Tualo.tualojs.Shunt', {
             T_UNARY_MINUS = 72, // unary -
             T_NOT = 73, // unary ! (convert (n > 0 || n < 0) to 0 and 0 to 1)
             T_SQRT = 74, // unary √
-            T_EQUAL = 75; // ==
+            T_EQUAL = 75, // ==
+            T_GREATER = 76, // >
+            T_LESS = 77, // <
+            T_GREATER_EQUAL = 78, // >=
+            T_LESS_EQUAL = 79; // <=
 
         // ----------------------------------------
         // token
@@ -174,7 +178,7 @@ Ext.define('Tualo.tualojs.Shunt', {
 
         // ----------------------------------------
         // scanner
-        var RE_PATTERN = /^(==|[√!,\+\-\*\/\^%\(\)]|(?:\d*\.\d+|\d+\.\d*|\d+)(?:[eE][+-]?\d+)?|'(?:\\.|[^'\\])*'|"(?:\\.|[^"\\])*"|[a-z_A-Zπ]+[a-z_A-Z0-9]*|[ \t]+)/;
+        var RE_PATTERN = /^(==|>=|<=|>|<|[√!,\+\-\*\/\^%\(\)]|(?:\d*\.\d+|\d+\.\d*|\d+)(?:[eE][+-]?\d+)?|'(?:\\.|[^'\\])*'|"(?:\\.|[^"\\])*"|[a-z_A-Zπ]+[a-z_A-Z0-9]*|[ \t]+)/;
 
         function Scanner(term) {
             this.tokens = new Stack;
@@ -249,6 +253,10 @@ Ext.define('Tualo.tualojs.Shunt', {
                 '%': T_MOD,
                 '^': T_POW,
                 '==': T_EQUAL,
+                '>': T_GREATER,
+                '<': T_LESS,
+                '>=': T_GREATER_EQUAL,
+                '<=': T_LESS_EQUAL,
                 '(': T_POPEN,
                 ')': T_PCLOSE,
                 ',': T_COMMA,
@@ -326,6 +334,10 @@ Ext.define('Tualo.tualojs.Shunt', {
                         case T_NOT:
                         case T_SQRT:
                         case T_EQUAL:
+                        case T_GREATER:
+                        case T_LESS:
+                        case T_GREATER_EQUAL:
+                        case T_LESS_EQUAL:
                             // It is known a priori that the operator takes n arguments.
                             var argc = this.argc(token);
 
@@ -402,6 +414,18 @@ Ext.define('Tualo.tualojs.Shunt', {
 
                         case T_EQUAL:
                             return lhs.value === rhs.value;
+
+                        case T_GREATER:
+                            return lhs.value > rhs.value;
+
+                        case T_LESS:
+                            return lhs.value < rhs.value;
+
+                        case T_GREATER_EQUAL:
+                            return lhs.value >= rhs.value;
+
+                        case T_LESS_EQUAL:
+                            return lhs.value <= rhs.value;
                     }
 
                     // throw?
@@ -435,6 +459,10 @@ Ext.define('Tualo.tualojs.Shunt', {
                     case T_MOD:
                     case T_POW:
                     case T_EQUAL:
+                    case T_GREATER:
+                    case T_LESS:
+                    case T_GREATER_EQUAL:
+                    case T_LESS_EQUAL:
                         return 2;
                 }
 
@@ -514,6 +542,10 @@ Ext.define('Tualo.tualojs.Shunt', {
                     case T_NOT:
                     case T_SQRT:
                     case T_EQUAL:
+                    case T_GREATER:
+                    case T_LESS:
+                    case T_GREATER_EQUAL:
+                    case T_LESS_EQUAL:
                         var token2;
 
                         both: while ((token2 = this.stack.last()) !== undefined) {
@@ -538,6 +570,10 @@ Ext.define('Tualo.tualojs.Shunt', {
                                 case T_NOT:
                                 case T_SQRT:
                                 case T_EQUAL:
+                                case T_GREATER:
+                                case T_LESS:
+                                case T_GREATER_EQUAL:
+                                case T_LESS_EQUAL:
                                     var p1 = this.preced(token),
                                         p2 = this.preced(token2);
 
@@ -628,6 +664,10 @@ Ext.define('Tualo.tualojs.Shunt', {
                         return 2;
 
                     case T_EQUAL:
+                    case T_GREATER:
+                    case T_LESS:
+                    case T_GREATER_EQUAL:
+                    case T_LESS_EQUAL:
                         return 1;
 
                     case T_PLUS:
