@@ -5,6 +5,7 @@ Ext.define('Tualo.tualojs.data.field.RowColorLogic', {
     ],
     critical: false,
     persist: false,
+    /*
     formulas: [
         {
             formula: 'if(title=="",1,0)',
@@ -24,6 +25,7 @@ Ext.define('Tualo.tualojs.data.field.RowColorLogic', {
         }
 
     ],
+    */
     calculate: function (data) {
         console.log('tualo_row_color_logic', data);
         try {
