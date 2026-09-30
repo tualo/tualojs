@@ -95,7 +95,7 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     if (val) {
       return '<i class="fa-solid fa-square-check"></i>';
     } else {
-      return '<i class="fa-solid fa-regular-square"></i>';
+      return '<i class="fa-regular fa-square"></i>';
     }
   },
   colorRenderer: function (val, meta, rec) {
