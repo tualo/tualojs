@@ -13,7 +13,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.VDatum', {
         let me = this;
         let doQuery = true;
 
-        console.log('VDatum convert start', currentValue, record);
+        //console.log('VDatum convert start', currentValue, record);
         if (Ext.isEmpty(currentValue)) {
 
 

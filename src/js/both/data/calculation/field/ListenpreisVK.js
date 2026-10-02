@@ -10,7 +10,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.ListenpreisVK', {
         let me = this;
         let doQuery = true;
 
-        console.log('***ListenpreisVK convert start', currentValue, record);
+        //console.log('***ListenpreisVK convert start', currentValue, record);
         if (me.lastQuery != record.get('artikel'))
             if (!Ext.isEmpty(record.get('artikel'))) {
                 if (typeof record.modified == 'undefined') return currentValue;

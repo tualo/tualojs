@@ -9,7 +9,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Categorie', {
         let me = this;
         let doQuery = true;
 
-        console.log('Categorie convert start', record);
+        // console.log('Categorie convert start', record);
         if (me.lastQuery != currentValue)
             if (!Ext.isEmpty(record.get('artikel'))) {
                 if (typeof record.modified == 'undefined') return currentValue;

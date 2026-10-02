@@ -7,7 +7,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
     ],
 
     convert: function (value, record) {
-        console.log('MARKUP berechnung ggf. noch nicht sauber!!!!!', record);
+        //console.log('MARKUP berechnung ggf. noch nicht sauber!!!!!', record);
         if (record.get('edit_markup')) {
             return value;
         }

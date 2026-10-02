@@ -4,7 +4,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.EKPreisSumme', {
         'data.field.tualo_calculation_ek_preis_summe'
     ],
     calculate: function (data) {
-        console.log('EKPreisSumme calculate start', data);
+        // console.log('EKPreisSumme calculate start', data);
         var v = data.anzahl * data.ekpreis;
 
         return v;

@@ -27,7 +27,7 @@ Ext.define('Tualo.tualojs.data.field.RowColorLogic', {
     ],
     */
     calculate: function (data) {
-        console.log('tualo_row_color_logic', data);
+        // console.log('tualo_row_color_logic', data);
         try {
 
             let me = this;
