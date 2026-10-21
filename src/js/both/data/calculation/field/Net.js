@@ -10,6 +10,11 @@ Ext.define('Tualo.tualojs.data.calculation.field.Net', {
         if (data.zuschlag) {
             v = v + (v * data.zuschlag / 100);
         }
+        /*
+        if (data.markup_discount_perc) {
+            v = v + (v * data.markup_discount_perc / 100);
+        }
+        */
 
         return v;
     },

@@ -16,6 +16,8 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
                 if (record.get('ekpreis') != 0 && record.get('markup_percent') != 0) {
                     var v = parseFloat(record.get('ekpreis')) * parseFloat(record.get('einheit_faktor'));
                     v = v * (parseFloat(record.get('markup_percent')) / 100);
+                    v = v * (parseFloat(record.get('markup_discount_perc')) / 100);
+
                     return v;
                 } else {
                     return value;
@@ -24,11 +26,13 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
             return record.get('listenpreis_vk');
         }
 
+        /*
         if (record.get('ekpreis') != 0 && record.get('markup_percent') != 0) {
             var v = parseFloat(record.get('ekpreis')) * parseFloat(record.get('einheit_faktor'));
             v = v * (parseFloat(record.get('markup_percent')) / 100);
+            v = v * (parseFloat(record.get('markup_discount_perc')) / 100);
             return v;
-        }
+        }*/
 
         return value;
     },
