@@ -84,38 +84,38 @@ Ext.define('Ext.grid.filters.DefaultFilters', {
         me.bindStore(store);
 
         if (grid.stateful) {
-            store.statefulFilters = true;
+            // store.statefulFilters = true;
         }
 
 
-        if (!Ext.isArray(grid.defaultFilters)){
-          if (grid.tablename){
-            /*
-            if (Tualo.StoreFilterRegistry.has(grid.tablename)){
-              grid.defaultFilters = Tualo.StoreFilterRegistry.get(grid.tablename,true);
-            }*/
-          }
-        }
-        if (Ext.isArray(grid.defaultFilters)){
-          grid.store.filters.suspendEvents(true);
-          grid.store.filters.add(grid.defaultFilters);
-
-          var i = 0,
-            columns = grid.columns;
-
-          for (i = 0, len = columns.length; i < len; i++) {
-            var column = columns[i],
-              defaultFilter = grid.defaultFilters.filter(function(df){
-                return df.property == column.dataIndex
-              })[0];
-            if(defaultFilter){
-
-              Ext.merge(column.filter, defaultFilter)
+        if (!Ext.isArray(grid.defaultFilters)) {
+            if (grid.tablename) {
+                /*
+                if (Tualo.StoreFilterRegistry.has(grid.tablename)){
+                  grid.defaultFilters = Tualo.StoreFilterRegistry.get(grid.tablename,true);
+                }*/
             }
-          }
+        }
+        if (Ext.isArray(grid.defaultFilters)) {
+            grid.store.filters.suspendEvents(true);
+            grid.store.filters.add(grid.defaultFilters);
 
-          grid.store.filters.resumeEvents();
-          grid.store.load();
+            var i = 0,
+                columns = grid.columns;
+
+            for (i = 0, len = columns.length; i < len; i++) {
+                var column = columns[i],
+                    defaultFilter = grid.defaultFilters.filter(function (df) {
+                        return df.property == column.dataIndex
+                    })[0];
+                if (defaultFilter) {
+
+                    Ext.merge(column.filter, defaultFilter)
+                }
+            }
+
+            grid.store.filters.resumeEvents();
+            grid.store.load();
         }
 
         me.initColumns();
@@ -178,7 +178,7 @@ Ext.define('Ext.grid.filters.DefaultFilters', {
             type = field && field.type;
 
             filter.type = (type && me.defaultFilterTypes[type]) ||
-                           column.defaultFilterType || 'string';
+                column.defaultFilterType || 'string';
         }
 
         column.filter = Ext.Factory.gridFilter(filter);
@@ -280,26 +280,26 @@ Ext.define('Ext.grid.filters.DefaultFilters', {
         me.grid = null;
     },
 
-    onUnbindStore: function(store) {
-        if (!Ext.isEmpty(store)){
-            if (store!=null){
-                try{
+    onUnbindStore: function (store) {
+        if (!Ext.isEmpty(store)) {
+            if (store != null) {
+                try {
                     store.getFilters().un('remove', this.onFilterRemove, this);
-                }catch(e){
-                    
+                } catch (e) {
+
                 }
             }
         }
     },
 
-    onBindStore: function(store, initial, propName) {
-        if (!Ext.isEmpty(store)){
-            if (store!=null){
-                try{
+    onBindStore: function (store, initial, propName) {
+        if (!Ext.isEmpty(store)) {
+            if (store != null) {
+                try {
                     this.local = !store.getRemoteFilter();
                     store.getFilters().on('remove', this.onFilterRemove, this);
-                }catch(e){
-                    
+                } catch (e) {
+
                 }
             }
         }
@@ -471,7 +471,7 @@ Ext.define('Ext.grid.filters.DefaultFilters', {
         }
     },
 
-    onReconfigure: function(grid, store, columns, oldStore) {
+    onReconfigure: function (grid, store, columns, oldStore) {
         var filterMenuItem = this.filterMenuItem,
             key;
 
