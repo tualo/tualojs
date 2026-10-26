@@ -4,12 +4,13 @@ Ext.define('Tualo.tualojs.data.calculation.field.SinglePriceMarkup', {
         'data.field.tualo_calculation_single_price_markup'
     ],
     calculate: function (data) {
-        //console.log('SinglePriceMarkup calculate start', data);
+        console.warn('SinglePriceMarkup calculate start', data);
         var v = parseFloat(data.ekpreis) * parseFloat(data.einheit_faktor);
 
         if (data.markup) {
             v += parseFloat(data.markup);
         }
+
 
         /*
         if (data.markup_percent) {

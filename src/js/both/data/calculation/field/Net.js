@@ -17,6 +17,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Net', {
         */
 
         return v;
+
     },
     critical: true,
     persist: true,
