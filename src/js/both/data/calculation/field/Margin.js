@@ -35,9 +35,10 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
                 return v;
             }
         } else {
-            if (record.get('listenpreis_vk') == 0) {
-                return value
-            }
+
+            // if (record.get('listenpreis_vk') == 0) {
+            return value
+            //}
 
         }
         return record.get('listenpreis_vk');
