@@ -2233,3 +2233,28 @@ INSERT IGNORE INTO `custom_types`
     'Tualo',
     ''
 );
+
+
+
+
+INSERT IGNORE INTO `custom_types`  
+(
+        id,
+        xtype_long_classic,
+        xtype_long_modern,
+        extendsxtype_classic,
+        extendsxtype_modern,
+        name,
+        vendor,
+        description
+) VALUES
+(
+    'Tualo.form.field.HtmlEditor',
+    'widget.tualo_html_editor',
+    'widget.tualo_html_editor',
+    'Ext.form.field.HtmlEditor',
+    'Ext.form.field.HtmlEditor',
+    'Tualo.form.field.HtmlEditor',
+    'Tualo',
+    ''
+);
