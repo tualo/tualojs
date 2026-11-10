@@ -26,7 +26,7 @@ Ext.define('Tualo.tualojs.data.calculation.field.Margin', {
 
     convert: function (value, record) {
         //consfecord.get('edit_markup')) {
-        console.warn('Margin calculate start', value, record);
+        // console.warn('Margin calculate start', value, record);
 
         if (!record.get('edit_markup')) {
             if (record.get('ekpreis') != 0 && record.get('markup_percent') != 0) {
