@@ -145,6 +145,26 @@ Ext.define('Tualo.tualojs.Format.Renderer', {
     }
     return Ext.util.Format.number(val, '0,000.0 %');
 
+  },
+
+  renderGroupColor: function (value, metaData) {
+    if (Ext.isEmpty(value) || value === 0 || value === '0') {
+      return '';
+    }
+
+    let group = String(value),
+      hash = 0;
+
+    for (let index = 0; index < group.length; index++) {
+      hash = (Math.imul(hash, 31) + group.charCodeAt(index)) | 0;
+    }
+
+    let hue = Math.floor(((hash >>> 0) * 137.508) % 360);
+    metaData.tdAttr = 'data-qtip="' + Ext.String.htmlEncode('Gruppe: ' + group) + '"';
+
+    return '<div style="width:8px;height:18px;margin:auto;border-radius:3px;' +
+      'background-color:hsl(' + hue + ',45%,82%);' +
+      'border:1px solid hsl(' + hue + ',35%,65%)"></div>';
   }
 });
 
@@ -175,5 +195,6 @@ Ext.merge(Ext.util.Format, {
   dePerMilleRenderer: Tualo.tualojs.Format.Renderer.dePerMilleRenderer,
   fullPercentRenderer: Tualo.tualojs.Format.Renderer.fullPercentRenderer,
   markup_percent: Tualo.tualojs.Format.Renderer.markup_percent,
-  stripedHtml300: Tualo.tualojs.Format.Renderer.stripedHtml300
+  stripedHtml300: Tualo.tualojs.Format.Renderer.stripedHtml300,
+  renderGroupColor: Tualo.tualojs.Format.Renderer.renderGroupColor
 });
