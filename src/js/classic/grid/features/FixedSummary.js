@@ -11,6 +11,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
 
 
     init: function (grid) {
+        console.log('FixedSummary', 'Initializing FixedSummary feature');
 
         this.rendererField = this.rendererFieldName || 'fixedSummaryRenderer';
         this.summaryTypeField = this.summaryTypeFieldName || 'fixedSummaryType';
@@ -46,7 +47,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         });
     },
     onBoxReady: function () {
-
+        console.log('FixedSummary', 'onBoxReady called');
 
         this.sumGrid = this.grid.getDockedItems('grid[itemId="' + this.xid + '"]');
         if (this.sumGrid) {
@@ -80,6 +81,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
 
     },
     onGridReconfigure: function () {
+        console.log('FixedSummary', 'onGridReconfigure called');
         this.isConfigured = false;
         this.configureAll();
         this.grid.getStore().on({
@@ -90,6 +92,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         });
     },
     configureAll: function () {
+        console.log('FixedSummary', 'configureAll called');
         if (this.sumGrid) {
             if (this.isConfigured === false) {
                 this.sumGrid.reconfigure(this.createSumStore(), this.getGridColumns());
@@ -99,9 +102,11 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         }
     },
     count: function (recs) {
+        console.log('FixedSummary', 'counting records:', recs.length);
         return recs.length;
     },
     sum: function (recs, field) {
+        console.log('FixedSummary', 'summing records for field:', field);
         var sum = 0, i, m = recs.length;
         for (i = 0; i < m; i++) {
             sum += recs[i].get(field);
@@ -109,9 +114,11 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         return sum;
     },
     average: function (recs, field) {
+        console.log('FixedSummary', 'averaging records for field:', field);
         return this.sum(recs, field) / recs.length;
     },
     getSummary: function (store, type, field, group) {
+        console.log('FixedSummary', 'getSummary called with type:', type, 'field:', field, 'group:', group);
         if (type) {
             if (this.onlySelected === true) {
 
@@ -152,6 +159,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
     },
 
     onSummarize: function () {
+        console.log('FixedSummary', 'onSummarize called');
         this.configureAll();
         if (this.sumGrid) {
             var i, store = this.grid.getStore(), gridcolumns = this.grid.columns, m = gridcolumns.length;
@@ -160,6 +168,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
             //summaryModel summaryTypeField
             for (i = 0; i < m; i++) {
                 if (typeof gridcolumns[i][this.summaryTypeField] !== 'undefined') {
+                    console.log('FixedSummary', 'calculating summary for column:', gridcolumns[i].dataIndex, 'type:', gridcolumns[i].fixedSummaryType);
                     summaryModel.set(gridcolumns[i].dataIndex, this.getSummary(store, gridcolumns[i].fixedSummaryType, gridcolumns[i].dataIndex));
                 }
             }
@@ -171,6 +180,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         return true;
     },
     createSumStore: function () {
+        console.log('FixedSummary', 'createSumStore called');
         var i, gridcolumns = this.grid.columns, m = gridcolumns.length, cnf = [];
         for (i = 0; i < m; i++) {
             var item = {
@@ -187,6 +197,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         });
     },
     getGridColumns: function () {
+        console.log('FixedSummary', 'getGridColumns called');
         var i, gridcolumns = this.grid.columns, m = gridcolumns.length, cnf = [];
         var defaultRenderer = function (v) { return ""; };
         var defaultVRenderer = function (v) { return ((Ext.isEmpty(v) || v == 0) ? '' : v); };
@@ -211,11 +222,13 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
     },
 
     onColumnResize: function (header, column, width, eoptions) {
+        console.log('FixedSummary', 'onColumnResize called for column:', column.dataIndex, 'new width:', width);
         this.sumGrid.getView().getEl().setOpacity(0);
         clearTimeout(this._colResizeTimeOut);
         this._colResizeTimeOut = Ext.defer(this.syncColumnWidths, 50, this);
     },
     isScrollable: function (el) {
+        console.log('FixedSummary', 'isScrollable called for element:', el);
         var dom = el.dom;
         return {
             x: dom.scrollWidth > dom.clientWidth,
@@ -223,6 +236,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         };
     },
     syncColumnWidths: function () {
+        console.log('FixedSummary', 'syncColumnWidths called');
         this.configureAll();
 
         var columns = this.grid.columns,
@@ -244,6 +258,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         this.sumGrid.getView().getEl().setOpacity(1, true);
     },
     onColumnMove: function (header, column, fromIndex, toIndex, eoptions) {
+        console.log('FixedSummary', 'onColumnMove called for column:', column.dataIndex, 'from index:', fromIndex, 'to index:', toIndex);
         this.sumGrid.headerCt.move(fromIndex, toIndex);
         this.sumGrid.getView().refresh();
     },
@@ -257,6 +272,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         return -1;
     },
     onColumnHide: function (header, column, eOpts) {
+        console.log('FixedSummary', 'onColumnHide called for column:', column.dataIndex);
         var sumColumns = this.sumGrid.getColumns();
         var colIndex = this.getColumnIndex(column);
         if (colIndex === -1)
@@ -265,6 +281,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
     },
 
     onColumnShow: function (header, column, eOpts) {
+        console.log('FixedSummary', 'onColumnShow called for column:', column.dataIndex);
         var sumColumns = this.sumGrid.getColumns();
         var colIndex = this.getColumnIndex(column);
 
@@ -274,6 +291,7 @@ Ext.define('Ext.tualo.grid.features.FixedSummary', {
         sumColumns[colIndex].show();
     },
     onScroll: function (e, t, eoptions) {
+        console.log('FixedSummary', 'onScroll called with event:', e, 'target:', t);
         var scrollLeft = this.grid.view.el.getScroll().left,
             gridView = this.sumGrid.view;
 
