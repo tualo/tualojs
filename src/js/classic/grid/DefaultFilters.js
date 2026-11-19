@@ -83,24 +83,16 @@ Ext.define('Ext.grid.filters.DefaultFilters', {
 
         me.bindStore(store);
 
-        if (grid.stateful) {
-            // store.statefulFilters = true;
-        }
 
 
-        if (!Ext.isArray(grid.defaultFilters)) {
-            if (grid.tablename) {
-                /*
-                if (Tualo.StoreFilterRegistry.has(grid.tablename)){
-                  grid.defaultFilters = Tualo.StoreFilterRegistry.get(grid.tablename,true);
-                }*/
-            }
-        }
+
+
         if (Ext.isArray(grid.defaultFilters)) {
             grid.store.filters.suspendEvents(true);
             grid.store.filters.add(grid.defaultFilters);
 
             var i = 0,
+                len = 0,
                 columns = grid.columns;
 
             for (i = 0, len = columns.length; i < len; i++) {
@@ -362,7 +354,7 @@ Ext.define('Ext.grid.filters.DefaultFilters', {
         var parentTable = this.isLocked ? item.up('tablepanel') : this.grid,
             filter = this.getMenuFilter(parentTable.headerCt);
 
-        filter.setActive(value);
+        // filter.setActive(value);
     },
 
     getHeaders: function () {

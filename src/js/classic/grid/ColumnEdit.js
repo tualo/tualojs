@@ -54,15 +54,15 @@ Ext.define('Ext.grid.column.ColumnEdit', {
         headerCt = grid.headerCt;
 
         headerCt.on({
-          scope: me,
-          add: me.onAdd,
-          menucreate: me.onMenuCreate
+            scope: me,
+            add: me.onAdd,
+            menucreate: me.onMenuCreate
         });
 
         grid.on({
-          scope: me,
-          destroy: me.onGridDestroy,
-          reconfigure: me.onReconfigure
+            scope: me,
+            destroy: me.onGridDestroy,
+            reconfigure: me.onReconfigure
         });
 
         me.bindStore(store);
@@ -87,7 +87,7 @@ Ext.define('Ext.grid.column.ColumnEdit', {
         // We start with filters defined on any columns.
         for (i = 0; i < len; i++) {
             column = columns[i];
-            editor = column.editor;
+            let editor = column.editor;
 
             if (editor) {
                 this.createColumnEditor(column);
@@ -101,9 +101,9 @@ Ext.define('Ext.grid.column.ColumnEdit', {
         var me = this,
             columnEditor = column.editor,
             editor = {
-              column: column,
-              grid: me.grid,
-              owner: me
+                column: column,
+                grid: me.grid,
+                owner: me
             },
             field, model, type;
 
@@ -137,10 +137,10 @@ Ext.define('Ext.grid.column.ColumnEdit', {
      * Handle creation of the grid's header menu.
      */
     onMenuCreate: function (headerCt, menu) {
-      menu.on({
-        beforeshow: this.onMenuBeforeShow,
-        scope: this
-      });
+        menu.on({
+            beforeshow: this.onMenuBeforeShow,
+            scope: this
+        });
     },
 
     /**
@@ -175,7 +175,7 @@ Ext.define('Ext.grid.column.ColumnEdit', {
 
             editor = me.getMenuEditor(parentTable.headerCt);
             if (editor) {
-              editor.showMenu(menuItem);
+                editor.showMenu(menuItem);
             }
 
             menuItem.setVisible(!!editor);
@@ -190,12 +190,12 @@ Ext.define('Ext.grid.column.ColumnEdit', {
         me.sep = menu.add('-');
 
         item = menu.add({
-          itemId: 'editors',
-          text: me.menuEditorText,
-          listeners: {
-            scope: me,
-            checkchange: me.onCheckChange
-          }
+            itemId: 'editors',
+            text: me.menuEditorText,
+            listeners: {
+                scope: me,
+                checkchange: me.onCheckChange
+            }
         });
 
         return (me.editorMenuItem[parentTableId] = item);
@@ -219,13 +219,13 @@ Ext.define('Ext.grid.column.ColumnEdit', {
         me.grid = null;
     },
 
-    onUnbindStore: function(store) {
-      //  store.getFilters().un('remove', this.onFilterRemove, this);
+    onUnbindStore: function (store) {
+        //  store.getFilters().un('remove', this.onFilterRemove, this);
     },
 
-    onBindStore: function(store, initial, propName) {
-      //  this.local = !store.getRemoteFilter();
-      //  store.getFilters().on('remove', this.onFilterRemove, this);
+    onBindStore: function (store, initial, propName) {
+        //  this.local = !store.getRemoteFilter();
+        //  store.getFilters().on('remove', this.onFilterRemove, this);
     },
 
     /**
@@ -245,7 +245,7 @@ Ext.define('Ext.grid.column.ColumnEdit', {
         var parentTable = this.isLocked ? item.up('tablepanel') : this.grid,
             editor = this.getMenuEditor(parentTable.headerCt);
 
-        filter.setActive(value);
+        // filter.setActive(value);
     },
 
     getHeaders: function () {
@@ -327,7 +327,7 @@ Ext.define('Ext.grid.column.ColumnEdit', {
 
 
 
-    onReconfigure: function(grid, store, columns, oldStore) {
+    onReconfigure: function (grid, store, columns, oldStore) {
         var editorMenuItem = this.editorMenuItem,
             key;
 

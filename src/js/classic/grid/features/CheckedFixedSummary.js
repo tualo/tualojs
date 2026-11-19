@@ -17,7 +17,6 @@ Ext.define('Tualo.grid.features.CheckedFixedSummary', {
 
     'checkedFieldName': 'none',
 
-    dock: undefined,
 
     summaryItemCls: Ext.baseCSSPrefix + 'grid-row-summary-item',
     dockedSummaryCls: Ext.baseCSSPrefix + 'docked-summary',

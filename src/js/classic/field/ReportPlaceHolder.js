@@ -1,5 +1,5 @@
 Ext.define('Ext.tualo.form.field.ReportPlaceHolder', {
-  extend: 'Ext.form.field.TextArea',
+
   alias: ['widget.tualoreportplaceholder'],
 
   extend: 'Ext.form.FieldContainer',
@@ -18,14 +18,14 @@ Ext.define('Ext.tualo.form.field.ReportPlaceHolder', {
     'Ext.layout.container.boxOverflow.Menu'
   ],
 
-  initComponent: function() {
+  initComponent: function () {
     var me = this;
     // No value set, we must report empty string
     if (me.value == null) {
       me.value = '';
     }
 
-    me.items = [ {
+    me.items = [{
       xtype: 'toolbar',
       items: [
         {
@@ -35,7 +35,7 @@ Ext.define('Ext.tualo.form.field.ReportPlaceHolder', {
           text: '456'
         }
       ]
-    } ,
+    },
     {
       xtype: 'textarea',
       value: me.value,
