@@ -36,6 +36,7 @@ Ext.define('Tualo.GlyphTool', {
         return (get('disabled')) ? 'opacity:0.2' : 'opacity:0.8';
       },
       displayText: function (get) {
+        var txt;
         txt = get('text');
         if (txt == '') {
           return (get('newLineText') ? '<br>' : '');

@@ -370,7 +370,7 @@ function II(a, b, c, d, x, s, ac) {
 }
 
 function transform(buf, offset) {
-  var a = 0, b = 0, c = 0, d = 0;
+  var a = 0, b = 0, c = 0, d = 0, j, i;
   var x = transformBuffer;
 
   a = state[0];
