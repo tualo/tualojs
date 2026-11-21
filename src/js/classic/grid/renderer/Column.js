@@ -9,7 +9,8 @@ Ext.define('Tualo.override.grid.column.Column', {
 
         return function () {
             if (typeof me.rendererScope == 'undefined') {
-                if (Tualo?.tualojs?.Format?.Renderer) {
+
+                if ((typeof window['Tualo'] !== 'undefined') && (Tualo?.tualojs?.Format?.Renderer)) {
                     if (renderer in Tualo.tualojs.Format.Renderer) {
                         // console.debug('Tualo?.tualojs?.Format?.Renderer using override Override.grid.column.Column');
                         return Ext.callback(renderer, Tualo.tualojs.Format.Renderer, arguments, 0, me);

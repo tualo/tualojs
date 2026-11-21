@@ -6,145 +6,143 @@ Ext.define('Ext.tualo.grid.pivot.window.ListFilter', {
     xtype: 'toolbar',
     dock: 'top',
     items: [{
-        //hidden: ( !me.showFilter )&&(!me.showNumberFilter),
-        //text: me.unselectText+'/'+me.selectText,
-        text: 'aufheben/auswählen',
-        handler: function(btn){
-          btn.up('listfilterpanel').unOrSelectAll();
+      //hidden: ( !me.showFilter )&&(!me.showNumberFilter),
+      //text: me.unselectText+'/'+me.selectText,
+      text: 'aufheben/auswählen',
+      handler: function (btn) {
+        btn.up('listfilterpanel').unOrSelectAll();
 
-          /*
-          if (type == 'Ext.tualo.grid.pivot.window.ListFilter'){
-            //me.configWindow.record.set('filter',[]);
-            me.typePanel.unOrSelectAll();
-          }
-          if (type == 'Ext.tualo.grid.pivot.window.NumberFilter'){
-            //me.configWindow.record.set('number_filter',{});
-          }
-          //me.configWindow.hide();
+        /*
+        if (type == 'Ext.tualo.grid.pivot.window.ListFilter'){
+          //me.configWindow.record.set('filter',[]);
+          me.typePanel.unOrSelectAll();
+        }
+        if (type == 'Ext.tualo.grid.pivot.window.NumberFilter'){
+          //me.configWindow.record.set('number_filter',{});
+        }
+        //me.configWindow.hide();
 
-          //Ext.destroy(me.configWindow);
-          //me.fireEvent('changed',[me]);
-          */
+        //Ext.destroy(me.configWindow);
+        //me.fireEvent('changed',[me]);
+        */
+      }
+    }, {
+      xtype: 'textfield',
+      emptyText: 'Suchen',
+      flex: 1,
+      listeners: {
+        change: function (fld, nv, ov) {
+          var view = fld.up('listfilterpanel');
+          nv = nv.toLowerCase();
+          view.filterTextField(nv);
         }
-      },{
-        xtype: 'textfield',
-        emptyText: 'Suchen',
-        flex: 1,
-        listeners: {
-          change: function(fld,nv,ov){
-            var view = fld.up('listfilterpanel');
-            nv = nv.toLowerCase();
-            view.filterTextField(nv);
-          }
-        }
+      }
     }]
   }],
-  filterTextField: function(text){
-    if (typeof  this.tmrfilter !='undefined'){
+  filterTextField: function (text) {
+    if (typeof this.tmrfilter != 'undefined') {
       Ext.undefer(this.tmrfilter);
-    }else{
+    } else {
 
     }
     this.filterText = text;
-    this.tmrfilter = Ext.defer(this.filterTextFieldDeferred,500,this,[text]);
+    this.tmrfilter = Ext.defer(this.filterTextFieldDeferred, 500, this, [text]);
   },
   filterText: '',
-  filterTextFieldDeferred: function(text){
+  filterTextFieldDeferred: function (text) {
     var store = this.getStore();
     store.getRoot().expand(true);
     var filters = store.getFilters();
     filters.removeAll();
-    filters.add( this.filteredFn.bind(this) );
+    filters.add(this.filteredFn.bind(this));
 
-  }, 
-  filteredFn: function(record){
-    if (this.filterText==''){
+  },
+  filteredFn: function (record) {
+    if (this.filterText == '') {
       return true;
     }
-    if (record.get('children')){
+    if (record.get('children')) {
       return true;
-    }else{
-      return record.get('text').toLowerCase().indexOf(this.filterText)>=0;
+    } else {
+      return record.get('text').toLowerCase().indexOf(this.filterText) >= 0;
     }
   },
 
-  getValue: function(){
+  getValue: function () {
 
     var root = this.getStore().getRootNode();
     var r = this.getCheckedChilds(root);
     return r;
   },
-  getCheckedChilds: function(node){
+  getCheckedChilds: function (node) {
     var result = [];
     var me = this;
-    node.eachChild( function(item){
+    node.eachChild(function (item) {
 
-      if (item.get("leaf")){
-        if (item.get("checked")){
-          if (this.filteredFn(item)){
+      if (item.get("leaf")) {
+        if (item.get("checked")) {
+          if (this.filteredFn(item)) {
             result.push(item.get("text"));
           }
         }
-      }else{
+      } else {
         result = result.concat(me.getCheckedChilds(item));
       }
-    },this);
+    }, this);
     return result;
   },
-  constructor: function(config){
+  constructor: function (config) {
     var me = this,
-    record= config.record,
-    text ='',
-    chlds = [],
-    hash = {},
-    vals = [],
-    filter = config.record.get('filter');
+      record = config.record,
+      text = '',
+      chlds = [],
+      hash = {},
+      vals = [],
+      filter = config.record.get('filter');
 
-//console.log(config.record.get('dataIndex'),vals);
-    if (typeof config.listeners === 'undefined'){
+    //console.log(config.record.get('dataIndex'),vals);
+    if (typeof config.listeners === 'undefined') {
       config.listeners = {};
 
     }
     config.listeners.scope = this;
 
-    config.listeners.checkchange = function( node, checked, eOpts ){
+    config.listeners.checkchange = function (node, checked, eOpts) {
       var me = this;
 
-      if (checked){
-        me.checkItemsUp(node,checked)
+      if (checked) {
+        me.checkItemsUp(node, checked)
       }
 
-      node.eachChild( function(item){
-        item.set('checked',checked);
+      node.eachChild(function (item) {
+        item.set('checked', checked);
       });
       // ToDo. check up to root
     }
 
-    var me = this;
-    //console.log(config.record);
-    config.grid.getDistinct(config.record,[],true,function(vals){
+    config.grid.getDistinct(config.record, [], true, function (vals) {
 
-      if (typeof filter=='undefined'){
-        filter=[];
+      if (typeof filter == 'undefined') {
+        filter = [];
       }
       var chlds = [];
 
-      for(var i in vals){
-        if ( (typeof record.get('renderer')!=='undefined') && (typeof record.get('renderer').call=='function') ){
-          text = record.get('renderer').call(me,vals[i].value);
+      for (var i in vals) {
+        if ((typeof record.get('renderer') !== 'undefined') && (typeof record.get('renderer').call == 'function')) {
+          text = record.get('renderer').call(me, vals[i].value);
 
-        }else{
+        } else {
           text = vals[i].value;
         }
-        if (typeof vals[i].treeValue!='undefined'){
-          if (typeof hash[vals[i].treeValue] == 'undefined'){
+        if (typeof vals[i].treeValue != 'undefined') {
+          if (typeof hash[vals[i].treeValue] == 'undefined') {
             hash[vals[i].treeValue] = chlds.length;
 
             chlds.push({
               text: vals[i].treeValue,
               leaf: false,
               children: [],
-              checked: filter.indexOf(vals[i].value)==-1?(filter.length==0?true:false): true
+              checked: filter.indexOf(vals[i].value) == -1 ? (filter.length == 0 ? true : false) : true
             });
 
           }
@@ -152,20 +150,20 @@ Ext.define('Ext.tualo.grid.pivot.window.ListFilter', {
           chlds[hash[vals[i].treeValue]].children.push({
             text: text,
             leaf: true,
-            checked: filter.indexOf(vals[i].value)==-1?(filter.length==0?true:false): true
+            checked: filter.indexOf(vals[i].value) == -1 ? (filter.length == 0 ? true : false) : true
           });
 
-        }else{
+        } else {
           chlds.push({
             text: text,
             leaf: true,
-            checked: filter.indexOf(vals[i].value)==-1?(filter.length==0?true:false): true
+            checked: filter.indexOf(vals[i].value) == -1 ? (filter.length == 0 ? true : false) : true
           });
         }
       }
 
       var store = Ext.create('Ext.data.TreeStore', {
-        root :{
+        root: {
           text: 'Alle/ Keine',
           expanded: true,
           children: chlds
@@ -176,7 +174,7 @@ Ext.define('Ext.tualo.grid.pivot.window.ListFilter', {
     })
 
     config.store = Ext.create('Ext.data.TreeStore', {
-      root :{
+      root: {
         text: 'Alle/ Keine',
         expanded: true,
         children: chlds
@@ -185,19 +183,19 @@ Ext.define('Ext.tualo.grid.pivot.window.ListFilter', {
     this.callParent([config]);
   },
 
-  unOrSelectAll: function(){
+  unOrSelectAll: function () {
     var me = this;
     var node = me.getStore().getRootNode();
     var set = false;
-    if (node.childNodes.length>0){
-      if (node.childNodes[0].get('checked')){
-        set=false;
-      }else{
-        set=true;
+    if (node.childNodes.length > 0) {
+      if (node.childNodes[0].get('checked')) {
+        set = false;
+      } else {
+        set = true;
       }
 
     }
-    me.checkItemsDown(node,set);
+    me.checkItemsDown(node, set);
     /*
     node.eachChild( function(item){
       item.set('checked',set);
@@ -205,20 +203,20 @@ Ext.define('Ext.tualo.grid.pivot.window.ListFilter', {
     });
     */
   },
-  checkItemsUp: function(node,checked){
-    if (node.parentNode!==null){
-      node.parentNode.set('checked',checked);
-      this.checkItemsUp(node.parentNode,checked);
+  checkItemsUp: function (node, checked) {
+    if (node.parentNode !== null) {
+      node.parentNode.set('checked', checked);
+      this.checkItemsUp(node.parentNode, checked);
     }
   },
-  checkItemsDown: function(node,checked){
-    var me=this;
-    node.eachChild( function(item){
-      item.set('checked',checked);
-      me.checkItemsDown(item,checked);
+  checkItemsDown: function (node, checked) {
+    var me = this;
+    node.eachChild(function (item) {
+      item.set('checked', checked);
+      me.checkItemsDown(item, checked);
     });
   },
-  initComponent: function(){
+  initComponent: function () {
 
 
 
