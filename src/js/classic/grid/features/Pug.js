@@ -36,7 +36,7 @@ Ext.define('Tualo.pug.Component', {
     }
 });
 
-Ext.define('Tualo.grid.plugin.Linker', {
+Ext.define('Tualo.grid.plugin.Pug', {
     extend: 'Ext.grid.plugin.RowWidget',
     alias: 'plugin.tualopug',
     getHeaderConfig: function () {
